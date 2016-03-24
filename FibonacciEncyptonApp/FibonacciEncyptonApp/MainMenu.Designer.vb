@@ -22,6 +22,7 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblPath = New System.Windows.Forms.Label()
         Me.lblSize = New System.Windows.Forms.Label()
@@ -35,12 +36,26 @@ Partial Class MainMenu
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StopEncytionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnEncypt = New System.Windows.Forms.Button()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnDecrypt = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtKeyDecrypt = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblSizeDecrypt = New System.Windows.Forms.Label()
+        Me.lblPathDecrypt = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblNameDecrypt = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.OpenDecryptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -114,12 +129,14 @@ Partial Class MainMenu
         '
         Me.txtKeyNumber.Location = New System.Drawing.Point(88, 88)
         Me.txtKeyNumber.Name = "txtKeyNumber"
-        Me.txtKeyNumber.Size = New System.Drawing.Size(349, 20)
+        Me.txtKeyNumber.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyNumber.TabIndex = 13
         Me.txtKeyNumber.Text = "123456"
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ProgressBar1)
+        Me.GroupBox1.Controls.Add(Me.btnEncypt)
         Me.GroupBox1.Controls.Add(Me.lblKeyNum)
         Me.GroupBox1.Controls.Add(Me.txtKeyNumber)
         Me.GroupBox1.Controls.Add(Me.lblPath)
@@ -137,9 +154,18 @@ Partial Class MainMenu
         '
         'GroupBox2
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 263)
+        Me.GroupBox2.Controls.Add(Me.btnDecrypt)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.txtKeyDecrypt)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.lblSizeDecrypt)
+        Me.GroupBox2.Controls.Add(Me.lblPathDecrypt)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.lblNameDecrypt)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 204)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(443, 100)
+        Me.GroupBox2.Size = New System.Drawing.Size(443, 156)
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Decryption"
@@ -155,7 +181,7 @@ Partial Class MainMenu
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.StopEncytionToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.OpenDecryptToolStripMenuItem, Me.StopEncytionToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -164,14 +190,7 @@ Partial Class MainMenu
         '
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.OpenToolStripMenuItem.Text = "Open"
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ManualToolStripMenuItem})
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "Help"
+        Me.OpenToolStripMenuItem.Text = "Open Encypt"
         '
         'StopEncytionToolStripMenuItem
         '
@@ -185,17 +204,132 @@ Partial Class MainMenu
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ManualToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "Help"
+        '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ManualToolStripMenuItem
         '
         Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
-        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
+        '
+        'btnEncypt
+        '
+        Me.btnEncypt.Location = New System.Drawing.Point(235, 86)
+        Me.btnEncypt.Name = "btnEncypt"
+        Me.btnEncypt.Size = New System.Drawing.Size(75, 23)
+        Me.btnEncypt.TabIndex = 14
+        Me.btnEncypt.Text = "Encyption"
+        Me.ToolTip1.SetToolTip(Me.btnEncypt, "Click this to encrypt the file.")
+        Me.btnEncypt.UseVisualStyleBackColor = True
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(9, 142)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(428, 23)
+        Me.ProgressBar1.TabIndex = 15
+        Me.ProgressBar1.Value = 78
+        '
+        'btnDecrypt
+        '
+        Me.btnDecrypt.Location = New System.Drawing.Point(235, 86)
+        Me.btnDecrypt.Name = "btnDecrypt"
+        Me.btnDecrypt.Size = New System.Drawing.Size(75, 23)
+        Me.btnDecrypt.TabIndex = 23
+        Me.btnDecrypt.Text = "Decrypt"
+        Me.ToolTip1.SetToolTip(Me.btnDecrypt, "Click this to encrypt the file.")
+        Me.btnDecrypt.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 88)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 13)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Key Number"
+        '
+        'txtKeyDecrypt
+        '
+        Me.txtKeyDecrypt.Location = New System.Drawing.Point(88, 88)
+        Me.txtKeyDecrypt.Name = "txtKeyDecrypt"
+        Me.txtKeyDecrypt.Size = New System.Drawing.Size(109, 20)
+        Me.txtKeyDecrypt.TabIndex = 22
+        Me.txtKeyDecrypt.Text = "123456"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 64)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "Path:  "
+        '
+        'lblSizeDecrypt
+        '
+        Me.lblSizeDecrypt.AutoSize = True
+        Me.lblSizeDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblSizeDecrypt.Location = New System.Drawing.Point(88, 38)
+        Me.lblSizeDecrypt.Name = "lblSizeDecrypt"
+        Me.lblSizeDecrypt.Size = New System.Drawing.Size(56, 15)
+        Me.lblSizeDecrypt.TabIndex = 21
+        Me.lblSizeDecrypt.Text = "570 Bytes"
+        '
+        'lblPathDecrypt
+        '
+        Me.lblPathDecrypt.AutoSize = True
+        Me.lblPathDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPathDecrypt.Location = New System.Drawing.Point(88, 62)
+        Me.lblPathDecrypt.Name = "lblPathDecrypt"
+        Me.lblPathDecrypt.Size = New System.Drawing.Size(222, 15)
+        Me.lblPathDecrypt.TabIndex = 20
+        Me.lblPathDecrypt.Text = "C:\Users\student-19\Desktop\Word_Doc.txt"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 38)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
+        Me.Label5.TabIndex = 17
+        Me.Label5.Text = "Size: "
+        '
+        'lblNameDecrypt
+        '
+        Me.lblNameDecrypt.AutoSize = True
+        Me.lblNameDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblNameDecrypt.Location = New System.Drawing.Point(88, 14)
+        Me.lblNameDecrypt.Name = "lblNameDecrypt"
+        Me.lblNameDecrypt.Size = New System.Drawing.Size(61, 15)
+        Me.lblNameDecrypt.TabIndex = 19
+        Me.lblNameDecrypt.Text = "Word_Doc"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 16)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(41, 13)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "Name: "
+        '
+        'OpenDecryptToolStripMenuItem
+        '
+        Me.OpenDecryptToolStripMenuItem.Name = "OpenDecryptToolStripMenuItem"
+        Me.OpenDecryptToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OpenDecryptToolStripMenuItem.Text = "Open Decrypt"
         '
         'MainMenu
         '
@@ -209,6 +343,8 @@ Partial Class MainMenu
         Me.Text = "Fibonacci Encyption"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -234,4 +370,17 @@ Partial Class MainMenu
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents btnEncypt As Button
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents btnDecrypt As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtKeyDecrypt As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblSizeDecrypt As Label
+    Friend WithEvents lblPathDecrypt As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblNameDecrypt As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents OpenDecryptToolStripMenuItem As ToolStripMenuItem
 End Class
