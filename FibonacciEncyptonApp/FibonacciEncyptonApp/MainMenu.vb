@@ -2,11 +2,12 @@
 Imports System.Numerics
 
 Public Class MainMenu
-    Private Sub btnFileSelection_Click(sender As Object, e As EventArgs) Handles btnFileSelection.Click
+
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         Dim myStream As Stream = Nothing
         Dim openFileDialog1 As New OpenFileDialog()
-        Dim largnum As String = "222232244629420445529739893461909967206666939096499764990979600"
-        Dim value As BigInteger = BigInteger.Parse(largnum)
+       'Dim largnum As String = "222232244629420445529739893461909967206666939096499764990979600"
+       'Dim value As BigInteger = BigInteger.Parse(largnum)
 
         openFileDialog1.InitialDirectory = "c:\"
         openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
@@ -29,17 +30,5 @@ Public Class MainMenu
                 End If
             End Try
         End If
-    End Sub
-
-    Private Sub btnEncyption_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnDecyption_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
     End Sub
 End Class
