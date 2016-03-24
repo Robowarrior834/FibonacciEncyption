@@ -31,11 +31,15 @@ Public Class MainMenu
         End If
     End Sub
 
-    Private Sub btnEncyption_Click(sender As Object, e As EventArgs) Handles btnEncyption.Click
+    Private Sub btnEncyption_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub btnDecyption_Click(sender As Object, e As EventArgs) Handles btnDecyption.Click
+    Private Sub btnDecyption_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
 End Class
