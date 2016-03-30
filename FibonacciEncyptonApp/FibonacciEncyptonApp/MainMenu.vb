@@ -1,60 +1,58 @@
 ﻿Imports System.IO
+Imports System
 Imports System.Numerics
 
 Public Class MainMenu
+    Private DecryptStream As Stream = Nothing
+    Private DecryptPath As String
+    Private EncyptPath As String
+    Private EncryptStream As Stream = Nothing
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
-        Dim myStream As Stream = Nothing
-        Dim openFileDialog1 As New OpenFileDialog()
-       'Dim largnum As String = "222232244629420445529739893461909967206666939096499764990979600"
-       'Dim value As BigInteger = BigInteger.Parse(largnum)
+        Dim openFileDialog1 As OpenFileDialog = New OpenFileDialog
+        'Dim largnum As String = "222232244629420445529739893461909967206666939096499764990979600"
+        'Dim value As BigInteger = BigInteger.Parse(largnum)
 
         openFileDialog1.InitialDirectory = "c:\"
-        openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
-        openFileDialog1.FilterIndex = 2
-        openFileDialog1.RestoreDirectory = True
+        openFileDialog1.Filter = "txt files (*.txt)|*.txt"
 
-        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            Try
-                myStream = openFileDialog1.OpenFile()
-                If (myStream IsNot Nothing) Then
-                    'read file here
-
-                End If
-            Catch Ex As Exception
-                MessageBox.Show("Cannot read file from disk. Original error: " & Ex.Message)
-            Finally
-                ' Check this again, since we need to make sure we didn't throw an exception on open.
-                If (myStream IsNot Nothing) Then
-                    myStream.Close()
-                End If
-            End Try
+        If openFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            EncyptPath = openFileDialog1.FileName
         End If
+
+
     End Sub
 
     Private Sub OpenDecryptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenDecryptToolStripMenuItem.Click
-        Dim myStream As Stream = Nothing
         Dim openFileDialog1 As New OpenFileDialog()
         openFileDialog1.InitialDirectory = "c:\"
         openFileDialog1.Filter = "locked files (*.locked)|*.locked"
-        openFileDialog1.FilterIndex = 2
-        openFileDialog1.RestoreDirectory = True
 
-        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            Try
-                myStream = openFileDialog1.OpenFile()
-                If (myStream IsNot Nothing) Then
-                    'read file here
-
-                End If
-            Catch Ex As Exception
-                MessageBox.Show("Cannot read file from disk. Original error: " & Ex.Message)
-            Finally
-                ' Check this again, since we need to make sure we didn't throw an exception on open.
-                If (myStream IsNot Nothing) Then
-                    myStream.Close()
-                End If
-            End Try
+        If openFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            DecryptPath = openFileDialog1.FileName
         End If
+    End Sub
+
+    Private Sub btnEncypt_Click(sender As Object, e As EventArgs) Handles btnEncypt.Click
+        Dim inputFile As StreamReader
+        Dim buffer(1) As Char
+        Dim index As Integer
+        Dim count As Integer
+        index = 0
+        count = 2
+        Try
+            inputFile = File.OpenText(EncyptPath)
+            inputFile.ReadBlock(buffer, index, count)
+
+            lblName2.Text = buffer(0) + buffer(1)
+            inputFile.ReadBlock(buffer, index, count)
+            lblName2.Text = buffer(0) + buffer(1)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
+
     End Sub
 End Class
