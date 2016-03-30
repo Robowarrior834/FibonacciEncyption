@@ -32,7 +32,7 @@ Partial Class MainMenu
         Me.lblSize2 = New System.Windows.Forms.Label()
         Me.txtKeyNumber = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.encryptProgress = New System.Windows.Forms.ProgressBar()
         Me.btnEncypt = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnDecrypt = New System.Windows.Forms.Button()
@@ -54,7 +54,7 @@ Partial Class MainMenu
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
+        Me.decryptProgress = New System.Windows.Forms.ProgressBar()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -136,7 +136,7 @@ Partial Class MainMenu
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ProgressBar1)
+        Me.GroupBox1.Controls.Add(Me.encryptProgress)
         Me.GroupBox1.Controls.Add(Me.btnEncypt)
         Me.GroupBox1.Controls.Add(Me.lblKeyNum)
         Me.GroupBox1.Controls.Add(Me.txtKeyNumber)
@@ -153,13 +153,13 @@ Partial Class MainMenu
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Encyption"
         '
-        'ProgressBar1
+        'encryptProgress
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(9, 142)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(428, 23)
-        Me.ProgressBar1.TabIndex = 15
-        Me.ProgressBar1.Value = 78
+        Me.encryptProgress.Location = New System.Drawing.Point(9, 142)
+        Me.encryptProgress.Name = "encryptProgress"
+        Me.encryptProgress.Size = New System.Drawing.Size(428, 23)
+        Me.encryptProgress.TabIndex = 15
+        Me.encryptProgress.Value = 78
         '
         'btnEncypt
         '
@@ -173,7 +173,7 @@ Partial Class MainMenu
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ProgressBar2)
+        Me.GroupBox2.Controls.Add(Me.decryptProgress)
         Me.GroupBox2.Controls.Add(Me.btnDecrypt)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtKeyDecrypt)
@@ -333,13 +333,13 @@ Partial Class MainMenu
         Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
         '
-        'ProgressBar2
+        'decryptProgress
         '
-        Me.ProgressBar2.Location = New System.Drawing.Point(9, 127)
-        Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(428, 23)
-        Me.ProgressBar2.TabIndex = 24
-        Me.ProgressBar2.Value = 78
+        Me.decryptProgress.Location = New System.Drawing.Point(9, 127)
+        Me.decryptProgress.Name = "decryptProgress"
+        Me.decryptProgress.Size = New System.Drawing.Size(428, 23)
+        Me.decryptProgress.TabIndex = 24
+        Me.decryptProgress.Value = 78
         '
         'MainMenu
         '
@@ -380,7 +380,7 @@ Partial Class MainMenu
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents encryptProgress As ProgressBar
     Friend WithEvents btnEncypt As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents btnDecrypt As Button
@@ -393,5 +393,5 @@ Partial Class MainMenu
     Friend WithEvents lblNameDecrypt As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents OpenDecryptToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProgressBar2 As ProgressBar
+    Friend WithEvents decryptProgress As ProgressBar
 End Class
