@@ -208,7 +208,7 @@ Partial Class MainMenu
         Me.btnDecrypt.Size = New System.Drawing.Size(75, 23)
         Me.btnDecrypt.TabIndex = 23
         Me.btnDecrypt.Text = "Decrypt"
-        Me.ToolTip1.SetToolTip(Me.btnDecrypt, "Click this to encrypt the file.")
+        Me.ToolTip1.SetToolTip(Me.btnDecrypt, "Click this to Decrypt the file.")
         Me.ToolTip2.SetToolTip(Me.btnDecrypt, resources.GetString("btnDecrypt.ToolTip"))
         Me.btnDecrypt.UseVisualStyleBackColor = True
         '
