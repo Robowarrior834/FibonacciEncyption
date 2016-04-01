@@ -45,14 +45,30 @@ Public Class MainMenu
             inputFile.ReadBlock(buffer, index, count)
 
             lblName2.Text = buffer(0) + buffer(1)
-            inputFile.ReadBlock(buffer, index, count)
-            lblName2.Text = buffer(0) + buffer(1)
+            
         Catch ex As Exception
 
         End Try
     End Sub
 
     Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
+        Dim inputFile As StreamReader
+        Dim buffer(1) As Char
+        Dim index As Integer
+        Dim count As Integer
+        index = 0
+        count = 2
+        Try
+            inputFile = File.OpenText(DecryptPath)
+            inputFile.ReadBlock(buffer, index, count)
+
+            lblName2.Text = buffer(0) + buffer(1)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub SuperSeceretToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuperSeceretToolStripMenuItem.Click
 
     End Sub
 End Class
