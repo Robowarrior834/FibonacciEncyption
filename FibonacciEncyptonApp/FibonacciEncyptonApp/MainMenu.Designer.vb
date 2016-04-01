@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,9 @@ Partial Class MainMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblPath = New System.Windows.Forms.Label()
         Me.lblSize = New System.Windows.Forms.Label()
@@ -56,8 +55,6 @@ Partial Class MainMenu
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.SuperSeceretToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -209,7 +206,6 @@ Partial Class MainMenu
         Me.btnDecrypt.TabIndex = 23
         Me.btnDecrypt.Text = "Decrypt"
         Me.ToolTip1.SetToolTip(Me.btnDecrypt, "Click this to Decrypt the file.")
-        Me.ToolTip2.SetToolTip(Me.btnDecrypt, resources.GetString("btnDecrypt.ToolTip"))
         Me.btnDecrypt.UseVisualStyleBackColor = True
         '
         'Label1
@@ -297,7 +293,7 @@ Partial Class MainMenu
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.OpenDecryptToolStripMenuItem, Me.StopEncytionToolStripMenuItem, Me.ExitToolStripMenuItem, Me.SuperSeceretToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.OpenDecryptToolStripMenuItem, Me.StopEncytionToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
@@ -344,12 +340,6 @@ Partial Class MainMenu
         Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
         Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
-        '
-        'SuperSeceretToolStripMenuItem
-        '
-        Me.SuperSeceretToolStripMenuItem.Name = "SuperSeceretToolStripMenuItem"
-        Me.SuperSeceretToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
-        Me.SuperSeceretToolStripMenuItem.Text = "super secret option"
         '
         'MainMenu
         '
@@ -404,6 +394,4 @@ Partial Class MainMenu
     Friend WithEvents Label7 As Label
     Friend WithEvents OpenDecryptToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents decryptProgress As ProgressBar
-    Friend WithEvents SuperSeceretToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolTip2 As ToolTip
 End Class

@@ -68,11 +68,4 @@ Public Class MainMenu
         End Try
     End Sub
 
-    Private Sub SuperSeceretToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuperSeceretToolStripMenuItem.Click
-        ToolTip2.Active = True
-    End Sub
-
-    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ToolTip2.Active = False
-    End Sub
 End Class
