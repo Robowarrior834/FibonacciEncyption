@@ -75,10 +75,13 @@ Public Class MainMenu
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
         Dim number1 As String = "1"
+        Dim number0 As String = "0"
         Dim number2 As String = "1"
+        Dim zero As BigInteger = BigInteger.Parse(number0)
         Dim preold As BigInteger = BigInteger.Parse(number1)
         Dim old As BigInteger = BigInteger.Parse(number2)
         Dim NewNumber As BigInteger
+        FibonacciNumbers.Add(zero)
         FibonacciNumbers.Add(preold)
         FibonacciNumbers.Add(old)
         For i As Integer = 2 To keyvalue Step 1
@@ -86,6 +89,8 @@ Public Class MainMenu
             preold = old
             old = NewNumber
             FibonacciNumbers.Add(NewNumber)
+            FibonacciNumbers.RemoveAt(0)
+
         Next
     End Sub
     Private Sub keyGeneration()
