@@ -690,11 +690,7 @@ Public Class MainMenu
 
     End Sub
 
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub matrixmulti()
         Dim a As Object
         Dim b As Object
         Dim c As Object
@@ -726,5 +722,6 @@ Public Class MainMenu
             Next j
         Next i
     End Sub
+
 
 End Class
