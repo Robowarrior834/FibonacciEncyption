@@ -52,6 +52,7 @@ Public Class MainMenu
             'lblName2.Text = buffer(0) + buffer(1)
 
 
+
         Catch ex As Exception
 
         End Try
@@ -111,6 +112,43 @@ Public Class MainMenu
         encrytionKey.Add(row1)
         encrytionKey.Add(row2)
 
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim a As Object
+        Dim b As Object
+        Dim c As Object
+        For i = 0 To 2
+            For j = 0 To 2
+                a(i, j) = InputBox("Enter the elements of the 1st matrix.")
+            Next j
+        Next i
+
+
+        For i = 0 To 2
+            For j = 0 To 2
+                b(i, j) = InputBox("Enter the elements of the 2nd matrix")
+            Next j
+        Next i
+
+        For i = 0 To 2
+            For j = 0 To 2
+                c(i, j) = 0
+                For k = 0 To 2
+                    c(i, j) = c(i, j) + a(i, k) * b(k, j)
+                Next k
+            Next j
+        Next i
+
+        For i = 0 To 2
+            For j = 0 To 2
+                MsgBox(c(i, j))
+            Next j
+        Next i
     End Sub
 
 End Class
