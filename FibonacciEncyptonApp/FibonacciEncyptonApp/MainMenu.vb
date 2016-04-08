@@ -22,17 +22,26 @@ Public Class MainMenu
         If openFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             EncryptPath = openFileDialog1.FileName
             lblPath2.Text = EncryptPath
+            lblPath2.Enabled = True
+            lblPath2.Visible = True
+
 
             Dim testFile As System.IO.FileInfo
             testFile = My.Computer.FileSystem.GetFileInfo(EncryptPath)
 
             Dim fileName As String = testFile.Name
             lblName2.Text = fileName
+            lblName2.Enabled = True
+            lblName2.Visible = True
 
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(EncryptPath)
             lblSize2.Text = infoReader.Length & " bytes"
+            lblSize2.Enabled = True
+            lblSize2.Visible = True
 
+            txtKeyNumber.Enabled = True
+            txtKeyNumber.Visible = True
         End If
 
 
@@ -45,6 +54,27 @@ Public Class MainMenu
 
         If openFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             DecryptPath = openFileDialog1.FileName
+            lblPathDecrypt.Text = DecryptPath
+            lblPathDecrypt.Enabled = True
+            lblPathDecrypt.Visible = True
+
+
+            Dim testFileDecrypt As System.IO.FileInfo
+            testFileDecrypt = My.Computer.FileSystem.GetFileInfo(DecryptPath)
+
+            Dim fileNameDecrypt As String = testFileDecrypt.Name
+            lblNameDecrypt.Text = fileNameDecrypt
+            lblNameDecrypt.Enabled = True
+            lblNameDecrypt.Visible = True
+
+            Dim infoReaderDecrypt As System.IO.FileInfo
+            infoReaderDecrypt = My.Computer.FileSystem.GetFileInfo(DecryptPath)
+            lblSizeDecrypt.Text = infoReaderDecrypt.Length & " bytes"
+            lblSizeDecrypt.Enabled = True
+            lblSizeDecrypt.Visible = True
+
+            txtKeyDecrypt.Enabled = True
+            txtKeyDecrypt.Visible = True
         End If
     End Sub
 
