@@ -21,18 +21,18 @@ Public Class MainMenu
 
         If openFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             EncryptPath = openFileDialog1.FileName
-            MsgBox(EncryptPath)
-
-            Dim infoReader As System.IO.FileInfo
-            infoReader = My.Computer.FileSystem.GetFileInfo(EncryptPath)
-            MsgBox("File is " & infoReader.Length & " bytes.")
+            lblPath2.Text = EncryptPath
 
             Dim testFile As System.IO.FileInfo
             testFile = My.Computer.FileSystem.GetFileInfo(EncryptPath)
 
-
             Dim fileName As String = testFile.Name
-            MsgBox(fileName)
+            lblName2.Text = fileName
+
+            Dim infoReader As System.IO.FileInfo
+            infoReader = My.Computer.FileSystem.GetFileInfo(EncryptPath)
+            lblSize2.Text = infoReader.Length & " bytes"
+
         End If
 
 
