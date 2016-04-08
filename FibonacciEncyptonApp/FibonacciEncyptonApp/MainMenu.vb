@@ -77,6 +77,12 @@ Public Class MainMenu
         Dim number1 As String = "1"
         Dim number0 As String = "0"
         Dim number2 As String = "1"
+        'Dim test As String = "2"
+        'Dim test2 As String = "3"
+        'Dim valtest As BigInteger = BigInteger.Parse(test)
+        'Dim valtest2 As BigInteger = BigInteger.Parse(test2)
+        'Dim valtest3 As BigInteger
+        'valtest3 = valtest * valtest2
         Dim zero As BigInteger = BigInteger.Parse(number0)
         Dim preold As BigInteger = BigInteger.Parse(number1)
         Dim old As BigInteger = BigInteger.Parse(number2)
@@ -104,6 +110,7 @@ Public Class MainMenu
         row2.Add(FibonacciNumbers(size - 2))
         encrytionKey.Add(row1)
         encrytionKey.Add(row2)
+
     End Sub
 
 End Class
