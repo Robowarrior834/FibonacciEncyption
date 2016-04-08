@@ -42,7 +42,7 @@ Public Class MainMenu
         index = 0
         count = 2
         keyvalue = txtKeyNumber.Text
-        GenFibonacci(keyvalue)
+        GenFibonacci()
         Try
             inputFile = File.OpenText(EncyptPath)
             inputFile.ReadBlock(buffer, index, count)
@@ -87,7 +87,4 @@ Public Class MainMenu
         Next
     End Sub
 
-    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
