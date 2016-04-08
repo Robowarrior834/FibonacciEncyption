@@ -722,6 +722,4 @@ Public Class MainMenu
             Next j
         Next i
     End Sub
-
-
 End Class
