@@ -7,11 +7,11 @@ Public Class MainMenu
     Private DecryptPath As String
     Private EncyptPath As String
     Private EncryptStream As Stream = Nothing
+    Public FibonacciNumbers As New List(Of BigInteger)
+
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         Dim openFileDialog1 As OpenFileDialog = New OpenFileDialog
-        'Dim largnum As String = "222232244629420445529739893461909967206666939096499764990979600"
-        'Dim value As BigInteger = BigInteger.Parse(largnum)
 
         openFileDialog1.InitialDirectory = "c:\"
         openFileDialog1.Filter = "txt files (*.txt)|*.txt"
@@ -38,14 +38,18 @@ Public Class MainMenu
         Dim buffer(1) As Char
         Dim index As Integer
         Dim count As Integer
+        Dim keyvalue As Integer
         index = 0
         count = 2
+        keyvalue = txtKeyNumber.Text
+        GenFibonacci()
         Try
             inputFile = File.OpenText(EncyptPath)
             inputFile.ReadBlock(buffer, index, count)
 
-            lblName2.Text = buffer(0) + buffer(1)
-            
+            'lblName2.Text = buffer(0) + buffer(1)
+
+
         Catch ex As Exception
 
         End Try
@@ -66,6 +70,21 @@ Public Class MainMenu
         Catch ex As Exception
 
         End Try
+    End Sub
+    Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
+        Dim number1 As String = "0"
+        Dim number2 As String = "1"
+        Dim preold As BigInteger = BigInteger.Parse(number1)
+        Dim old As BigInteger = BigInteger.Parse(number2)
+        Dim NewNumber As BigInteger
+        FibonacciNumbers.Add(preold)
+        FibonacciNumbers.Add(old)
+        For i As Integer = 3 To keyvalue Step 1
+            NewNumber = preold + old
+            preold = old
+            old = NewNumber
+            FibonacciNumbers.Add(NewNumber)
+        Next
     End Sub
 
 End Class
