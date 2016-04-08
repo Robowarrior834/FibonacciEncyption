@@ -5,10 +5,12 @@ Imports System.Numerics
 Public Class MainMenu
     Private DecryptStream As Stream = Nothing
     Private DecryptPath As String
-    Private EncyptPath As String
+    Private EncryptPath As String
     Private EncryptStream As Stream = Nothing
     Public FibonacciNumbers As New ArrayList
     Private encrytionKey As New ArrayList
+    Dim FilePath As String
+    Dim FileSize As System.IO.FileInfo
 
 
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
@@ -18,7 +20,19 @@ Public Class MainMenu
         openFileDialog1.Filter = "txt files (*.txt)|*.txt"
 
         If openFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
-            EncyptPath = openFileDialog1.FileName
+            EncryptPath = openFileDialog1.FileName
+            MsgBox(EncryptPath)
+
+            Dim infoReader As System.IO.FileInfo
+            infoReader = My.Computer.FileSystem.GetFileInfo(EncryptPath)
+            MsgBox("File is " & infoReader.Length & " bytes.")
+
+            Dim testFile As System.IO.FileInfo
+            testFile = My.Computer.FileSystem.GetFileInfo(EncryptPath)
+
+
+            Dim fileName As String = testFile.Name
+            MsgBox(fileName)
         End If
 
 
@@ -51,7 +65,7 @@ Public Class MainMenu
         GenFibonacci(keyvalue)
         keyGeneration()
         Try
-            inputFile = File.OpenText(EncyptPath)
+            inputFile = File.OpenText(EncryptPath)
             inputFile.ReadBlock(buffer, index, count)
             Select Case buffer(0)
                 Case "a"
