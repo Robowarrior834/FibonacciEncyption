@@ -25,7 +25,6 @@ Public Class MainMenu
             lblPath2.Enabled = True
             lblPath2.Visible = True
 
-
             Dim testFile As System.IO.FileInfo
             testFile = My.Computer.FileSystem.GetFileInfo(EncryptPath)
 
