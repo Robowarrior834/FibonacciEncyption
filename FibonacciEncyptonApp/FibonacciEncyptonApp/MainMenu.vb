@@ -628,6 +628,7 @@ Public Class MainMenu
             currentchars.Add(row1)
             currentchars.Add(row2)
 
+            matrixmulti(currentchars)
 
 
         Catch ex As Exception
@@ -690,37 +691,64 @@ Public Class MainMenu
 
     End Sub
 
-    Private Sub matrixmulti()
-        Dim a As Object
-        Dim b As Object
-        Dim c As Object
-        For i = 0 To 2
-            For j = 0 To 2
-                a(i, j) = InputBox("Enter the elements of the 1st matrix.")
-            Next j
-        Next i
+    Private Sub matrixmulti(ByVal currentchars As ArrayList)
+        'Dim a As Object
+        'Dim b As Object
+        'Dim c As Object
+        Dim zerostring As String = "0"
+        Dim row1 As New ArrayList
+        Dim row2 As New ArrayList
+        Dim value1 As BigInteger
+        Dim value2 As BigInteger
+        Dim sum As BigInteger
+
+        Dim C As New ArrayList
+        C.Add(row1)
+        C.Add(row2)
+
+        For i As Integer = 1 To 2 Step 1
+            For j As Integer = 1 To 1 Step 1
+                sum = BigInteger.Parse(zerostring)
+                For k As Integer = 1 To 2 Step 1
+                    row1 = encrytionKey(i - 1)
+                    value1 = row1(k - 1)
+                    row1 = currentchars(k - 1)
+                    value2 = row1(j - 1)
+                    sum = sum + value1 * value2
+                Next
+                row1 = C(i - 1)
+                row1.Add(sum)
+                C(i - 1) = row1
+            Next
+        Next
+
+        'For i = 0 To 2
+        '    For j = 0 To 2
+        '        a(i, j) = InputBox("Enter the elements of the 1st matrix.")
+        '    Next j
+        'Next i
 
 
-        For i = 0 To 2
-            For j = 0 To 2
-                b(i, j) = InputBox("Enter the elements of the 2nd matrix")
-            Next j
-        Next i
+        'For i = 0 To 2
+        '    For j = 0 To 2
+        '        b(i, j) = InputBox("Enter the elements of the 2nd matrix")
+        '    Next j
+        'Next i
 
-        For i = 0 To 2
-            For j = 0 To 2
-                c(i, j) = 0
-                For k = 0 To 2
-                    c(i, j) = c(i, j) + a(i, k) * b(k, j)
-                Next k
-            Next j
-        Next i
+        'For i = 0 To 2
+        '    For j = 0 To 2
+        '        c(i, j) = 0
+        '        For k = 0 To 2
+        '            c(i, j) = c(i, j) + a(i, k) * b(k, j)
+        '        Next k
+        '    Next j
+        'Next i
 
-        For i = 0 To 2
-            For j = 0 To 2
-                MsgBox(c(i, j))
-            Next j
-        Next i
+        'For i = 0 To 2
+        '    For j = 0 To 2
+        '        MsgBox(c(i, j))
+        '    Next j
+        'Next i
     End Sub
 
 
