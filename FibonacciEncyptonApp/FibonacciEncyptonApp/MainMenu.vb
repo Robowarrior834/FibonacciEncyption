@@ -90,12 +90,10 @@ Public Class MainMenu
         Dim tempValue As BigInteger
         Dim c As New ArrayList
         Dim outputPath As String
+        Dim size As Integer
 
         '------------file-writing-----------------------
-        Dim outputfile As System.IO.StreamWriter
-
-
-
+        Dim outputfile As StreamWriter
         '----------end-file-writing--------------
         index = 0
         count = 2
@@ -103,619 +101,777 @@ Public Class MainMenu
         GenFibonacci(keyvalue)
         keyGeneration()
         Try
+            size = File.ReadAllText(EncryptPath).Length
             inputFile = File.OpenText(EncryptPath)
-            inputFile.ReadBlock(buffer, index, count)
-            Select Case buffer(0)
-                Case "a"
-                    tempString = "0"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "b"
-                    tempString = "1"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "c"
-                    tempString = "2"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "d"
-                    tempString = "3"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "e"
-                    tempString = "4"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "f"
-                    tempString = "5"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "g"
-                    tempString = "6"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "h"
-                    tempString = "7"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "i"
-                    tempString = "8"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "j"
-                    tempString = "9"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "k"
-                    tempString = "10"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "l"
-                    tempString = "11"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "m"
-                    tempString = "12"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "n"
-                    tempString = "13"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "o"
-                    tempString = "14"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "p"
-                    tempString = "15"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "q"
-                    tempString = "16"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "r"
-                    tempString = "17"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "s"
-                    tempString = "18"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "T"
-                    tempString = "19"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "u"
-                    tempString = "20"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "v"
-                    tempString = "21"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "w"
-                    tempString = "22"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "x"
-                    tempString = "23"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "y"
-                    tempString = "24"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "z"
-                    tempString = "25"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "A"
-                    tempString = "26"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "B"
-                    tempString = "27"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "C"
-                    tempString = "28"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "D"
-                    tempString = "29"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "E"
-                    tempString = "30"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "F"
-                    tempString = "31"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "G"
-                    tempString = "32"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "H"
-                    tempString = "33"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "I"
-                    tempString = "34"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "J"
-                    tempString = "35"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "K"
-                    tempString = "36"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "L"
-                    tempString = "37"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "M"
-                    tempString = "38"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "N"
-                    tempString = "39"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "O"
-                    tempString = "40"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "P"
-                    tempString = "41"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "Q"
-                    tempString = "42"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "R"
-                    tempString = "43"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "S"
-                    tempString = "44"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "T"
-                    tempString = "45"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "U"
-                    tempString = "46"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "V"
-                    tempString = "47"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "W"
-                    tempString = "48"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "X"
-                    tempString = "49"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "Y"
-                    tempString = "50"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "Z"
-                    tempString = "51"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "."
-                    tempString = "52"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "?"
-                    tempString = "53"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "!"
-                    tempString = "54"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case ","
-                    tempString = "55"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "'"
-                    tempString = "56"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "-"
-                    tempString = "57"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case """"
-                    tempString = "58"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case vbCr
-                    tempString = "59"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "0"
-                    tempString = "60"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "1"
-                    tempString = "61"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "2"
-                    tempString = "62"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "3"
-                    tempString = "63"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "4"
-                    tempString = "64"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "5"
-                    tempString = "65"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "6"
-                    tempString = "66"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "7"
-                    tempString = "67"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "8"
-                    tempString = "68"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "9"
-                    tempString = "69"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case "\"
-                    tempString = "70"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-                Case " "
-                    tempString = "71"
-                    tempValue = BigInteger.Parse(tempString)
-                    row1.Add(tempValue)
-            End Select
-            Select Case buffer(1)
-                Case "a"
-                    tempString = "0"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "b"
-                    tempString = "1"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "c"
-                    tempString = "2"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "d"
-                    tempString = "3"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "e"
-                    tempString = "4"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "f"
-                    tempString = "5"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "g"
-                    tempString = "6"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "h"
-                    tempString = "7"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "i"
-                    tempString = "8"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "j"
-                    tempString = "9"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "k"
-                    tempString = "10"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "l"
-                    tempString = "11"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "m"
-                    tempString = "12"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "n"
-                    tempString = "13"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "o"
-                    tempString = "14"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "p"
-                    tempString = "15"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "q"
-                    tempString = "16"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "r"
-                    tempString = "17"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "s"
-                    tempString = "18"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "T"
-                    tempString = "19"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "u"
-                    tempString = "20"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "v"
-                    tempString = "21"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "w"
-                    tempString = "22"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "x"
-                    tempString = "23"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "y"
-                    tempString = "24"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "z"
-                    tempString = "25"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "A"
-                    tempString = "26"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "B"
-                    tempString = "27"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "C"
-                    tempString = "28"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "D"
-                    tempString = "29"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "E"
-                    tempString = "30"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "F"
-                    tempString = "31"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "G"
-                    tempString = "32"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "H"
-                    tempString = "33"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "I"
-                    tempString = "34"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "J"
-                    tempString = "35"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "K"
-                    tempString = "36"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "L"
-                    tempString = "37"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "M"
-                    tempString = "38"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "N"
-                    tempString = "39"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "O"
-                    tempString = "40"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "P"
-                    tempString = "41"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "Q"
-                    tempString = "42"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "R"
-                    tempString = "43"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "S"
-                    tempString = "44"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "T"
-                    tempString = "45"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "U"
-                    tempString = "46"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "V"
-                    tempString = "47"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "W"
-                    tempString = "48"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "X"
-                    tempString = "49"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "Y"
-                    tempString = "50"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "Z"
-                    tempString = "51"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "."
-                    tempString = "52"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "?"
-                    tempString = "53"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "!"
-                    tempString = "54"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case ","
-                    tempString = "55"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "'"
-                    tempString = "56"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "-"
-                    tempString = "57"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case """"
-                    tempString = "58"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case vbCr
-                    tempString = "59"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "0"
-                    tempString = "60"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "1"
-                    tempString = "61"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "2"
-                    tempString = "62"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "3"
-                    tempString = "63"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "4"
-                    tempString = "64"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "5"
-                    tempString = "65"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "6"
-                    tempString = "66"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "7"
-                    tempString = "67"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "8"
-                    tempString = "68"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "9"
-                    tempString = "69"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case "\"
-                    tempString = "70"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-                Case " "
-                    tempString = "71"
-                    tempValue = BigInteger.Parse(tempString)
-                    row2.Add(tempValue)
-            End Select
-            currentchars.Add(row1)
-            currentchars.Add(row2)
-
-            matrixmulti(currentchars, c)
-
             outputPath = Replace(EncryptPath, ".txt", ".locked")
-            outputfile = My.Computer.FileSystem.OpenTextFileWriter(outputPath, True)
 
-            Select Case (c(0))
-                Case 0
-                    outputfile.Write("a")
-                Case 1
-                    outputfile.Write("b")
-                Case 2
-                    outputfile.Write("c")
-                Case 3
-                    outputfile.Write("d")
-                Case 4
-                    outputfile.Write("e")
-                Case 5
-                    outputfile.Write("f")
-                Case 61
-                    outputfile.Write("6")
-            End Select
+            outputfile = My.Computer.FileSystem.OpenTextFileWriter(outputPath, False)
 
+            For i As Integer = 0 To size - 2 Step 2
+                inputFile.ReadBlock(buffer, index, count) ' Read two charractes to a buffer
+
+                Select Case buffer(0)
+                    Case "a"
+                        tempString = "0"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "b"
+                        tempString = "1"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "c"
+                        tempString = "2"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "d"
+                        tempString = "3"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "e"
+                        tempString = "4"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "f"
+                        tempString = "5"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "g"
+                        tempString = "6"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "h"
+                        tempString = "7"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "i"
+                        tempString = "8"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "j"
+                        tempString = "9"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "k"
+                        tempString = "10"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "l"
+                        tempString = "11"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "m"
+                        tempString = "12"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "n"
+                        tempString = "13"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "o"
+                        tempString = "14"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "p"
+                        tempString = "15"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "q"
+                        tempString = "16"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "r"
+                        tempString = "17"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "s"
+                        tempString = "18"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "T"
+                        tempString = "19"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "u"
+                        tempString = "20"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "v"
+                        tempString = "21"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "w"
+                        tempString = "22"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "x"
+                        tempString = "23"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "y"
+                        tempString = "24"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "z"
+                        tempString = "25"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "A"
+                        tempString = "26"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "B"
+                        tempString = "27"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "C"
+                        tempString = "28"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "D"
+                        tempString = "29"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "E"
+                        tempString = "30"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "F"
+                        tempString = "31"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "G"
+                        tempString = "32"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "H"
+                        tempString = "33"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "I"
+                        tempString = "34"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "J"
+                        tempString = "35"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "K"
+                        tempString = "36"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "L"
+                        tempString = "37"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "M"
+                        tempString = "38"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "N"
+                        tempString = "39"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "O"
+                        tempString = "40"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "P"
+                        tempString = "41"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "Q"
+                        tempString = "42"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "R"
+                        tempString = "43"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "S"
+                        tempString = "44"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "T"
+                        tempString = "45"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "U"
+                        tempString = "46"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "V"
+                        tempString = "47"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "W"
+                        tempString = "48"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "X"
+                        tempString = "49"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "Y"
+                        tempString = "50"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "Z"
+                        tempString = "51"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "."
+                        tempString = "52"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "?"
+                        tempString = "53"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "!"
+                        tempString = "54"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case ","
+                        tempString = "55"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "'"
+                        tempString = "56"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "-"
+                        tempString = "57"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case """"
+                        tempString = "58"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case vbCr
+                        tempString = "59"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "0"
+                        tempString = "60"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "1"
+                        tempString = "61"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "2"
+                        tempString = "62"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "3"
+                        tempString = "63"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "4"
+                        tempString = "64"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "5"
+                        tempString = "65"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "6"
+                        tempString = "66"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "7"
+                        tempString = "67"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "8"
+                        tempString = "68"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "9"
+                        tempString = "69"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "\"
+                        tempString = "70"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case vbLf
+                        tempString = "71"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                End Select
+                Select Case buffer(1)
+                    Case "a"
+                        tempString = "0"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "b"
+                        tempString = "1"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "c"
+                        tempString = "2"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "d"
+                        tempString = "3"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "e"
+                        tempString = "4"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "f"
+                        tempString = "5"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "g"
+                        tempString = "6"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "h"
+                        tempString = "7"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "i"
+                        tempString = "8"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "j"
+                        tempString = "9"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "k"
+                        tempString = "10"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "l"
+                        tempString = "11"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "m"
+                        tempString = "12"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "n"
+                        tempString = "13"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "o"
+                        tempString = "14"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "p"
+                        tempString = "15"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "q"
+                        tempString = "16"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "r"
+                        tempString = "17"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "s"
+                        tempString = "18"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "T"
+                        tempString = "19"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "u"
+                        tempString = "20"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "v"
+                        tempString = "21"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "w"
+                        tempString = "22"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "x"
+                        tempString = "23"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "y"
+                        tempString = "24"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "z"
+                        tempString = "25"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "A"
+                        tempString = "26"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "B"
+                        tempString = "27"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "C"
+                        tempString = "28"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "D"
+                        tempString = "29"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "E"
+                        tempString = "30"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "F"
+                        tempString = "31"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "G"
+                        tempString = "32"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "H"
+                        tempString = "33"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "I"
+                        tempString = "34"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "J"
+                        tempString = "35"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "K"
+                        tempString = "36"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "L"
+                        tempString = "37"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "M"
+                        tempString = "38"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "N"
+                        tempString = "39"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "O"
+                        tempString = "40"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "P"
+                        tempString = "41"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "Q"
+                        tempString = "42"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "R"
+                        tempString = "43"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "S"
+                        tempString = "44"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "T"
+                        tempString = "45"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "U"
+                        tempString = "46"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "V"
+                        tempString = "47"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "W"
+                        tempString = "48"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "X"
+                        tempString = "49"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "Y"
+                        tempString = "50"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "Z"
+                        tempString = "51"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "."
+                        tempString = "52"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "?"
+                        tempString = "53"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "!"
+                        tempString = "54"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case ","
+                        tempString = "55"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "'"
+                        tempString = "56"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "-"
+                        tempString = "57"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case """"
+                        tempString = "58"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case vbCr
+                        tempString = "59"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "0"
+                        tempString = "60"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "1"
+                        tempString = "61"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "2"
+                        tempString = "62"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "3"
+                        tempString = "63"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "4"
+                        tempString = "64"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "5"
+                        tempString = "65"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "6"
+                        tempString = "66"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "7"
+                        tempString = "67"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "8"
+                        tempString = "68"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "9"
+                        tempString = "69"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "\"
+                        tempString = "70"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case vbLf
+                        tempString = "71"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                End Select
+                currentchars.Add(row1)
+                currentchars.Add(row2)
+
+                matrixmulti(currentchars, c) 'multiply the arraylists together
+
+
+
+                Dim temrow As New ArrayList
+                Dim tempBig As BigInteger
+                For j As Integer = 0 To 1 Step 1
+                    Try
+                        temrow = c(j)
+                        tempBig = temrow(0)
+                        '------------------Write-the-file-----------------------------------
+                        If (tempBig.ToString() = "0") Then
+                            outputfile.Write("a")
+                        ElseIf (tempBig.ToString() = "1") Then
+                            outputfile.Write("b")
+                        ElseIf (tempBig.ToString() = "2") Then
+                            outputfile.Write("c")
+                        ElseIf (tempBig.ToString() = "3") Then
+                            outputfile.Write("d")
+                        ElseIf (tempBig.ToString() = "4") Then
+                            outputfile.Write("e")
+                        ElseIf (tempBig.ToString() = "5") Then
+                            outputfile.Write("f")
+                        ElseIf (tempBig.ToString() = "6") Then
+                            outputfile.Write("g")
+                        ElseIf (tempBig.ToString() = "7") Then
+                            outputfile.Write("h")
+                        ElseIf (tempBig.ToString() = "8") Then
+                            outputfile.Write("i")
+                        ElseIf (tempBig.ToString() = "9") Then
+                            outputfile.Write("j")
+                        ElseIf (tempBig.ToString() = "10") Then
+                            outputfile.Write("k")
+                        ElseIf (tempBig.ToString() = "11") Then
+                            outputfile.Write("l")
+                        ElseIf (tempBig.ToString() = "12") Then
+                            outputfile.Write("m")
+                        ElseIf (tempBig.ToString() = "13") Then
+                            outputfile.Write("n")
+                        ElseIf (tempBig.ToString() = "14") Then
+                            outputfile.Write("o")
+                        ElseIf (tempBig.ToString() = "15") Then
+                            outputfile.Write("p")
+                        ElseIf (tempBig.ToString() = "16") Then
+                            outputfile.Write("q")
+                        ElseIf (tempBig.ToString() = "17") Then
+                            outputfile.Write("r")
+                        ElseIf (tempBig.ToString() = "18") Then
+                            outputfile.Write("s")
+                        ElseIf (tempBig.ToString() = "19") Then
+                            outputfile.Write("t")
+                        ElseIf (tempBig.ToString() = "20") Then
+                            outputfile.Write("u")
+                        ElseIf (tempBig.ToString() = "21") Then
+                            outputfile.Write("v")
+                        ElseIf (tempBig.ToString() = "22") Then
+                            outputfile.Write("w")
+                        ElseIf (tempBig.ToString() = "23") Then
+                            outputfile.Write("x")
+                        ElseIf (tempBig.ToString() = "24") Then
+                            outputfile.Write("y")
+                        ElseIf (tempBig.ToString() = "25") Then
+                            outputfile.Write("z")
+                        ElseIf (tempBig.ToString() = "26") Then
+                            outputfile.Write("A")
+                        ElseIf (tempBig.ToString() = "27") Then
+                            outputfile.Write("B")
+                        ElseIf (tempBig.ToString() = "28") Then
+                            outputfile.Write("C")
+                        ElseIf (tempBig.ToString() = "29") Then
+                            outputfile.Write("D")
+                        ElseIf (tempBig.ToString() = "30") Then
+                            outputfile.Write("E")
+                        ElseIf (tempBig.ToString() = "31") Then
+                            outputfile.Write("F")
+                        ElseIf (tempBig.ToString() = "32") Then
+                            outputfile.Write("G")
+                        ElseIf (tempBig.ToString() = "33") Then
+                            outputfile.Write("H")
+                        ElseIf (tempBig.ToString() = "34") Then
+                            outputfile.Write("I")
+                        ElseIf (tempBig.ToString() = "35") Then
+                            outputfile.Write("J")
+                        ElseIf (tempBig.ToString() = "36") Then
+                            outputfile.Write("K")
+                        ElseIf (tempBig.ToString() = "37") Then
+                            outputfile.Write("L")
+                        ElseIf (tempBig.ToString() = "38") Then
+                            outputfile.Write("M")
+                        ElseIf (tempBig.ToString() = "39") Then
+                            outputfile.Write("N")
+                        ElseIf (tempBig.ToString() = "40") Then
+                            outputfile.Write("O")
+                        ElseIf (tempBig.ToString() = "41") Then
+                            outputfile.Write("P")
+                        ElseIf (tempBig.ToString() = "42") Then
+                            outputfile.Write("Q")
+                        ElseIf (tempBig.ToString() = "43") Then
+                            outputfile.Write("R")
+                        ElseIf (tempBig.ToString() = "44") Then
+                            outputfile.Write("S")
+                        ElseIf (tempBig.ToString() = "45") Then
+                            outputfile.Write("T")
+                        ElseIf (tempBig.ToString() = "46") Then
+                            outputfile.Write("U")
+                        ElseIf (tempBig.ToString() = "47") Then
+                            outputfile.Write("V")
+                        ElseIf (tempBig.ToString() = "48") Then
+                            outputfile.Write("W")
+                        ElseIf (tempBig.ToString() = "49") Then
+                            outputfile.Write("X")
+                        ElseIf (tempBig.ToString() = "50") Then
+                            outputfile.Write("Y")
+                        ElseIf (tempBig.ToString() = "51") Then
+                            outputfile.Write("Z")
+                        ElseIf (tempBig.ToString() = "52") Then
+                            outputfile.Write(".")
+                        ElseIf (tempBig.ToString() = "53") Then
+                            outputfile.Write("?")
+                        ElseIf (tempBig.ToString() = "54") Then
+                            outputfile.Write("!")
+                        ElseIf (tempBig.ToString() = "55") Then
+                            outputfile.Write(",")
+                        ElseIf (tempBig.ToString() = "56") Then
+                            outputfile.Write("'")
+                        ElseIf (tempBig.ToString() = "57") Then
+                            outputfile.Write("-")
+                        ElseIf (tempBig.ToString() = "58") Then
+                            outputfile.Write("""")
+                        ElseIf (tempBig.ToString() = "59") Then
+                            outputfile.Write(vbCr)
+                        ElseIf (tempBig.ToString() = "60") Then
+                            outputfile.Write("0")
+                        ElseIf (tempBig.ToString() = "61") Then
+                            outputfile.Write("1")
+                        ElseIf (tempBig.ToString() = "62") Then
+                            outputfile.Write("2")
+                        ElseIf (tempBig.ToString() = "63") Then
+                            outputfile.Write("3")
+                        ElseIf (tempBig.ToString() = "64") Then
+                            outputfile.Write("4")
+                        ElseIf (tempBig.ToString() = "65") Then
+                            outputfile.Write("5")
+                        ElseIf (tempBig.ToString() = "66") Then
+                            outputfile.Write("6")
+                        ElseIf (tempBig.ToString() = "67") Then
+                            outputfile.Write("7")
+                        ElseIf (tempBig.ToString() = "68") Then
+                            outputfile.Write("8")
+                        ElseIf (tempBig.ToString() = "69") Then
+                            outputfile.Write("9")
+                        ElseIf (tempBig.ToString() = "70") Then
+                            outputfile.Write("\")
+                        ElseIf (tempBig.ToString() = "71") Then
+                            outputfile.Write(vbLf)
+
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+
+                Next
+                currentchars.Clear()
+                row1.Clear()
+                row2.Clear()
+                temrow.Clear()
+                c.Clear()
+
+            Next
+            outputfile.Close()
 
 
 
         Catch ex As Exception
 
         End Try
+
+        encrytionKey.Clear()
+
     End Sub
 
     Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
