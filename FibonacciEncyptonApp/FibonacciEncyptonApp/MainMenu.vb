@@ -1847,10 +1847,9 @@ Public Class MainMenu
 
 
         Catch ex As Exception
-            outputfile.Close()
         End Try
 
-        encrytionKey.Clear()
+        decryptionKey.Clear()
 
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
@@ -1927,7 +1926,8 @@ Public Class MainMenu
         Dim value1 As BigInteger
         Dim value2 As BigInteger
         Dim sum As BigInteger
-
+        Dim modularvalue As BigInteger
+        modularvalue = BigInteger.Parse("81")
 
         c.Add(row1)
         C.Add(row2)
@@ -1937,9 +1937,9 @@ Public Class MainMenu
                 sum = BigInteger.Parse(zerostring)
                 For k As Integer = 1 To 2 Step 1
                     row1 = encrytionKey(i - 1)
-                    value1 = row1(k - 1)
+                    value1 = row1(k - 1) Mod 81
                     row1 = currentchars(k - 1)
-                    value2 = row1(j - 1)
+                    value2 = row1(j - 1) Mod 81
                     sum = sum + value1 * value2
                 Next
                 sum = sum Mod 81 ' will need to be increased if more characters are added
@@ -1954,10 +1954,12 @@ Public Class MainMenu
         Dim zerostring As String = "0"
         Dim row1 As New ArrayList
         Dim row2 As New ArrayList
+        Dim row3 As New ArrayList
         Dim value1 As BigInteger
         Dim value2 As BigInteger
         Dim sum As BigInteger
-
+        Dim modularvalue As BigInteger
+        modularvalue = BigInteger.Parse("81")
 
         c.Add(row1)
         c.Add(row2)
@@ -1968,16 +1970,28 @@ Public Class MainMenu
                 For k As Integer = 1 To 2 Step 1
                     row1 = decryptionKey(i - 1)
                     value1 = row1(k - 1)
+                    value1 = Modulus(value1, modularvalue)
                     row1 = currentchars(k - 1)
-                    value2 = row1(j - 1)
+                    value2 = row1(j - 1) Mod 81
                     sum = sum + value1 * value2
                 Next
                 sum = sum Mod 81 ' will need to be increased if more characters are added
-                row1 = c(i - 1)
-                row1.Add(sum)
-                c(i - 1) = row1
+                row2 = c(i - 1)
+                row2.Add(sum)
+                c(i - 1) = row2
             Next
         Next
 
     End Sub
+    Private Function Modulus(ByRef x As BigInteger, m As BigInteger)
+        Dim r As BigInteger
+        r = x Mod m
+        If (r < 0) Then
+            r = r + m
+        ElseIf (r >= 0) Then
+            r = r
+        End If
+
+        Return r
+    End Function
 End Class
