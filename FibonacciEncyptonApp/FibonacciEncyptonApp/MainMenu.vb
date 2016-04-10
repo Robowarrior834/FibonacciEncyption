@@ -108,6 +108,7 @@ Public Class MainMenu
             outputfile = My.Computer.FileSystem.OpenTextFileWriter(outputPath, False)
 
             For i As Integer = 0 To size - 2 Step 2
+
                 inputFile.ReadBlock(buffer, index, count) ' Read two charractes to a buffer
 
                 Select Case buffer(0)
@@ -187,7 +188,7 @@ Public Class MainMenu
                         tempString = "18"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
-                    Case "T"
+                    Case "t"
                         tempString = "19"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
@@ -397,6 +398,42 @@ Public Class MainMenu
                         row1.Add(tempValue)
                     Case vbLf
                         tempString = "71"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case " "
+                        tempString = "72"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case ";"
+                        tempString = "73"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "("
+                        tempString = "74"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case ")"
+                        tempString = "75"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case ":"
+                        tempString = "76"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "~"
+                        tempString = "77"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "`"
+                        tempString = "78"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case "*"
+                        tempString = "79"
+                        tempValue = BigInteger.Parse(tempString)
+                        row1.Add(tempValue)
+                    Case vbTab
+                        tempString = "80"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
                 End Select
@@ -477,7 +514,7 @@ Public Class MainMenu
                         tempString = "18"
                         tempValue = BigInteger.Parse(tempString)
                         row2.Add(tempValue)
-                    Case "T"
+                    Case "t"
                         tempString = "19"
                         tempValue = BigInteger.Parse(tempString)
                         row2.Add(tempValue)
@@ -689,6 +726,43 @@ Public Class MainMenu
                         tempString = "71"
                         tempValue = BigInteger.Parse(tempString)
                         row2.Add(tempValue)
+                    Case " "
+                        tempString = "72"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case ";"
+                        tempString = "73"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "("
+                        tempString = "74"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case ")"
+                        tempString = "75"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case ":"
+                        tempString = "76"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "~"
+                        tempString = "77"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "`"
+                        tempString = "78"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case "*"
+                        tempString = "79"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+                    Case vbTab
+                        tempString = "80"
+                        tempValue = BigInteger.Parse(tempString)
+                        row2.Add(tempValue)
+
                 End Select
                 currentchars.Add(row1)
                 currentchars.Add(row2)
@@ -848,7 +922,24 @@ Public Class MainMenu
                             outputfile.Write("\")
                         ElseIf (tempBig.ToString() = "71") Then
                             outputfile.Write(vbLf)
-
+                        ElseIf (tempBig.ToString() = "72") Then
+                            outputfile.Write(" ")
+                        ElseIf (tempBig.ToString() = "73") Then
+                            outputfile.Write(";")
+                        ElseIf (tempBig.ToString() = "74") Then
+                            outputfile.Write("(")
+                        ElseIf (tempBig.ToString() = "75") Then
+                            outputfile.Write(")")
+                        ElseIf (tempBig.ToString() = "76") Then
+                            outputfile.Write(":")
+                        ElseIf (tempBig.ToString() = "77") Then
+                            outputfile.Write("~")
+                        ElseIf (tempBig.ToString() = "78") Then
+                            outputfile.Write("`")
+                        ElseIf (tempBig.ToString() = "79") Then
+                            outputfile.Write("*")
+                        ElseIf (tempBig.ToString() = "80") Then
+                            outputfile.Write(vbTab)
                         End If
                     Catch ex As Exception
 
@@ -867,7 +958,7 @@ Public Class MainMenu
 
 
         Catch ex As Exception
-
+            outputfile.Close()
         End Try
 
         encrytionKey.Clear()
@@ -951,7 +1042,7 @@ Public Class MainMenu
                     value2 = row1(j - 1)
                     sum = sum + value1 * value2
                 Next
-                sum = sum Mod 72 ' will need to be increased if more characters are added
+                sum = sum Mod 81 ' will need to be increased if more characters are added
                 row1 = C(i - 1)
                 row1.Add(sum)
                 C(i - 1) = row1
