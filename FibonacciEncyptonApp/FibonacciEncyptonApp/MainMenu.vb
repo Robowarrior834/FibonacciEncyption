@@ -955,7 +955,7 @@ Public Class MainMenu
 
             Next
             outputfile.Close()
-
+            inputFile.Close()
 
 
         Catch ex As Exception
@@ -1843,6 +1843,7 @@ Public Class MainMenu
 
             Next
             outputfile.Close()
+            inputFile.Close()
 
 
 
