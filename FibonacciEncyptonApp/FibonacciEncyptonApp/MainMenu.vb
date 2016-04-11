@@ -107,9 +107,9 @@ Public Class MainMenu
             outputPath = Replace(EncryptPath, ".txt", ".locked")
 
             outputfile = My.Computer.FileSystem.OpenTextFileWriter(outputPath, False)
-
+            encryptProgress.Maximum = size
             For i As Integer = 0 To size - 2 Step 2
-
+                encryptProgress.Value = i
                 inputFile.ReadBlock(buffer, index, count) ' Read two charractes to a buffer
 
                 Select Case buffer(0)
@@ -995,9 +995,9 @@ Public Class MainMenu
             outputPath = Replace(DecryptPath, ".locked", ".txt")
 
             outputfile = My.Computer.FileSystem.OpenTextFileWriter(outputPath, False)
-
+            decryptProgress.Maximum = size
             For i As Integer = 0 To size - 2 Step 2
-
+                decryptProgress.Value = i
                 inputFile.ReadBlock(buffer, index, count) ' Read two charractes to a buffer
 
                 Select Case buffer(0)

@@ -158,8 +158,9 @@ Partial Class MainMenu
         Me.encryptProgress.Location = New System.Drawing.Point(9, 142)
         Me.encryptProgress.Name = "encryptProgress"
         Me.encryptProgress.Size = New System.Drawing.Size(428, 23)
+        Me.encryptProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.encryptProgress.TabIndex = 15
-        Me.encryptProgress.Value = 78
+        Me.encryptProgress.Value = 50
         '
         'btnEncypt
         '
@@ -196,7 +197,6 @@ Partial Class MainMenu
         Me.decryptProgress.Name = "decryptProgress"
         Me.decryptProgress.Size = New System.Drawing.Size(428, 23)
         Me.decryptProgress.TabIndex = 24
-        Me.decryptProgress.Value = 78
         '
         'btnDecrypt
         '
