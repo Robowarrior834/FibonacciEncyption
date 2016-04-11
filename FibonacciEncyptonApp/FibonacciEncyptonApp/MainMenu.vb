@@ -2061,4 +2061,8 @@ Public Class MainMenu
         decryptTRD.IsBackground = False
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
     End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close();
+    End Sub
 End Class
