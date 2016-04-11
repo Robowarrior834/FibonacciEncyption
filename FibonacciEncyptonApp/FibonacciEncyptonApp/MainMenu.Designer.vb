@@ -172,7 +172,7 @@ Partial Class MainMenu
         Me.btnEncypt.Name = "btnEncypt"
         Me.btnEncypt.Size = New System.Drawing.Size(75, 23)
         Me.btnEncypt.TabIndex = 14
-        Me.btnEncypt.Text = "Encyption"
+        Me.btnEncypt.Text = "Encrypt"
         Me.ToolTip1.SetToolTip(Me.btnEncypt, "Click this to encrypt the file.")
         Me.btnEncypt.UseVisualStyleBackColor = True
         '
@@ -247,6 +247,7 @@ Partial Class MainMenu
         Me.lblSizeDecrypt.Name = "lblSizeDecrypt"
         Me.lblSizeDecrypt.Size = New System.Drawing.Size(2, 15)
         Me.lblSizeDecrypt.TabIndex = 21
+        Me.lblSizeDecrypt.Visible = False
         '
         'lblPathDecrypt
         '
@@ -256,6 +257,7 @@ Partial Class MainMenu
         Me.lblPathDecrypt.Name = "lblPathDecrypt"
         Me.lblPathDecrypt.Size = New System.Drawing.Size(2, 15)
         Me.lblPathDecrypt.TabIndex = 20
+        Me.lblPathDecrypt.Visible = False
         '
         'Label5
         '
@@ -274,6 +276,7 @@ Partial Class MainMenu
         Me.lblNameDecrypt.Name = "lblNameDecrypt"
         Me.lblNameDecrypt.Size = New System.Drawing.Size(2, 15)
         Me.lblNameDecrypt.TabIndex = 19
+        Me.lblNameDecrypt.Visible = False
         '
         'Label7
         '
