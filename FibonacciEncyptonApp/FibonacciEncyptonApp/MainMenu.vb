@@ -2064,6 +2064,8 @@ Public Class MainMenu
     End Sub
 
     Private Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        encryptTRD.Abort()
+        decryptTRD.Abort()
 
     End Sub
 
@@ -2075,5 +2077,7 @@ Public Class MainMenu
         decryptTRD.Abort()
     End Sub
 
-
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class
