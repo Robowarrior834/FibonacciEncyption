@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System
 Imports System.Numerics
+Imports System.Threading
 
 Public Class MainMenu
     Private DecryptStream As Stream = Nothing
@@ -12,9 +13,11 @@ Public Class MainMenu
     Private decryptionKey As New ArrayList
     Dim FilePath As String
     Dim FileSize As System.IO.FileInfo
+    Private encryptTRD As Thread
+    Private decryptTRD As Thread
 
 
-    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles fileOpenEncrypt.Click
         Dim openFileDialog1 As OpenFileDialog = New OpenFileDialog
 
         openFileDialog1.InitialDirectory = "c:\"
@@ -49,8 +52,14 @@ Public Class MainMenu
 
 
     End Sub
+    Private Sub launchThread()
+        encryptTRD.Start()
+    End Sub
+    Private Sub launchThreadDecrypt()
+        decryptTRD.Start()
+    End Sub
 
-    Private Sub OpenDecryptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenDecryptToolStripMenuItem.Click
+    Private Sub OpenDecryptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles fileOpenDecrypt.Click
         Dim openFileDialog1 As New OpenFileDialog()
         openFileDialog1.InitialDirectory = "c:\"
         openFileDialog1.Filter = "locked files (*.locked)|*.locked"
@@ -83,7 +92,7 @@ Public Class MainMenu
         End If
     End Sub
 
-    Private Sub btnEncypt_Click(sender As Object, e As EventArgs) Handles btnEncypt.Click
+    Private Sub encrypt()
         Dim inputFile As StreamReader
         Dim buffer(1) As Char
         Dim index As Integer
@@ -106,6 +115,10 @@ Public Class MainMenu
         keyvalue = txtKeyNumber.Text
         GenFibonacci(keyvalue)
         keyGeneration()
+        fileOpenEncrypt.Enabled = False
+        fileOpenDecrypt.Enabled = False
+        fileStopEncryption.Enabled = True
+        fileStopDecryption.Enabled = False
         Try
             size = File.ReadAllText(EncryptPath).Length
             inputFile = File.OpenText(EncryptPath)
@@ -987,11 +1000,18 @@ Public Class MainMenu
         txtKeyNumber.Enabled = False
         txtKeyNumber.Text = ""
         btnEncypt.Enabled = False
+        fileOpenEncrypt.Enabled = True
+        fileOpenDecrypt.Enabled = True
+        fileStopEncryption.Enabled = False
+        fileStopDecryption.Enabled = False
 
 
     End Sub
 
-    Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
+    Private Sub btnEncypt_Click(sender As Object, e As EventArgs) Handles btnEncypt.Click
+        launchThread()
+    End Sub
+    Private Sub decrypt()
         Dim inputFile As StreamReader
         Dim buffer(1) As Char
         Dim index As Integer
@@ -1011,9 +1031,14 @@ Public Class MainMenu
         '----------end-file-writing--------------
         index = 0
         count = 2
-        keyvalue = txtKeyNumber.Text
+        keyvalue = txtKeyDecrypt.Text
         GenFibonacci(keyvalue)
         keyGenerationDecypt(keyvalue)
+        fileOpenEncrypt.Enabled = False
+        fileOpenDecrypt.Enabled = False
+        fileStopEncryption.Enabled = False
+        fileStopDecryption.Enabled = True
+
         Try
             size = File.ReadAllText(DecryptPath).Length
             inputFile = File.OpenText(DecryptPath)
@@ -1251,7 +1276,7 @@ Public Class MainMenu
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
                     Case "'"
-        tempString = "56"
+                        tempString = "56"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
                     Case "-"
@@ -1892,8 +1917,16 @@ Public Class MainMenu
         txtKeyDecrypt.Enabled = False
         txtKeyDecrypt.Text = ""
         btnDecrypt.Enabled = False
+        fileOpenEncrypt.Enabled = True
+        fileOpenDecrypt.Enabled = True
+        fileStopEncryption.Enabled = False
+        fileStopDecryption.Enabled = False
 
 
+    End Sub
+
+    Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
+        launchThreadDecrypt()
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
         Dim number1 As String = "1"
@@ -1973,7 +2006,7 @@ Public Class MainMenu
         modularvalue = BigInteger.Parse("81")
 
         c.Add(row1)
-        C.Add(row2)
+        c.Add(row2)
 
         For i As Integer = 1 To 2 Step 1
             For j As Integer = 1 To 1 Step 1
@@ -1986,9 +2019,9 @@ Public Class MainMenu
                     sum = sum + value1 * value2
                 Next
                 sum = sum Mod 81 ' will need to be increased if more characters are added
-                row1 = C(i - 1)
+                row1 = c(i - 1)
                 row1.Add(sum)
-                C(i - 1) = row1
+                c(i - 1) = row1
             Next
         Next
 
@@ -2038,13 +2071,11 @@ Public Class MainMenu
         Return r
     End Function
 
-    ' Public Function postEncryptionPath(encryptPath As String) As String
-    'Dim efn As Integer
-    '   efn = InStrRev(encryptPath, "\")
-    'If efn > 0 Then
-    '      encryptPath = (encryptPath, efn)
-    ' Else
-    '       encryptPath = ""
-    '  End If
-    ' End Function
+    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        encryptTRD = New Thread(AddressOf encrypt)
+        encryptTRD.IsBackground = False
+        decryptTRD = New Thread(AddressOf decrypt)
+        decryptTRD.IsBackground = False
+        System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+    End Sub
 End Class
