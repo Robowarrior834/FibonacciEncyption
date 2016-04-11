@@ -967,7 +967,10 @@ Public Class MainMenu
             outputfile.Close()
         End Try
 
+        encryptProgress.Value = size
         encrytionKey.Clear()
+
+
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
@@ -1870,6 +1873,7 @@ Public Class MainMenu
         Catch ex As Exception
         End Try
 
+        decryptProgress.Value = size
         decryptionKey.Clear()
 
         Dim EncryptResponse = MsgBox("The file has been decrypted. Open file location?", MessageBoxButtons.YesNo)
