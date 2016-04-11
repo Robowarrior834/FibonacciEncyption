@@ -55,11 +55,13 @@ Public Class MainMenu
 
     End Sub
     Private Sub launchThread()
-        encryptTRD.Abort()
+
         encryptTRD.Start()
+
+
     End Sub
     Private Sub launchThreadDecrypt()
-        decryptTRD.Abort()
+
         decryptTRD.Start()
     End Sub
 
