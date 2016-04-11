@@ -971,7 +971,7 @@ Public Class MainMenu
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start(outputPath)
+            Process.Start("C:\")
         End If
 
         encryptProgress.Value = 0
@@ -1877,9 +1877,16 @@ Public Class MainMenu
             Process.Start("C:\")
         End If
 
-        encryptProgress.Value = 0
-        lblName2.Enabled = False
-        lblName2.Visible = False
+        decryptProgress.Value = 0
+        lblNameDecrypt.Enabled = False
+        lblNameDecrypt.Visible = False
+        lblSizeDecrypt.Enabled = False
+        lblSizeDecrypt.Visible = False
+        lblPathDecrypt.Enabled = False
+        lblPathDecrypt.Visible = False
+        txtKeyDecrypt.Enabled = False
+        txtKeyDecrypt.Text = ""
+        btnDecrypt.Enabled = False
 
 
     End Sub
