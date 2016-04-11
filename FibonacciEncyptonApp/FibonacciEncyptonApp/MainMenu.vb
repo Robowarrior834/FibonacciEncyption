@@ -42,6 +42,9 @@ Public Class MainMenu
 
             txtKeyNumber.Enabled = True
             txtKeyNumber.Visible = True
+
+            btnEncypt.Enabled = True
+            btnEncypt.Visible = True
         End If
 
 
@@ -75,6 +78,8 @@ Public Class MainMenu
 
             txtKeyDecrypt.Enabled = True
             txtKeyDecrypt.Visible = True
+
+            btnDecrypt.Enabled = True
         End If
     End Sub
 
@@ -964,6 +969,11 @@ Public Class MainMenu
 
         encrytionKey.Clear()
 
+        Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
+        If EncryptResponse = MsgBoxResult.Yes Then
+            Process.Start("C:\")
+        End If
+
     End Sub
 
     Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
@@ -1221,12 +1231,12 @@ Public Class MainMenu
                         tempString = "54"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
-                    Case ","
+                    Case ", "
                         tempString = "55"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
                     Case "'"
-                        tempString = "56"
+        tempString = "56"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
                     Case "-"
@@ -1845,12 +1855,15 @@ Public Class MainMenu
             outputfile.Close()
             inputFile.Close()
 
-
-
         Catch ex As Exception
         End Try
 
         decryptionKey.Clear()
+
+        Dim EncryptResponse = MsgBox("The file has been decrypted. Open file location?", MessageBoxButtons.YesNo)
+        If EncryptResponse = MsgBoxResult.Yes Then
+            Process.Start("C:\")
+        End If
 
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
