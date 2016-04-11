@@ -100,39 +100,46 @@ Partial Class MainMenu
         '
         Me.lblName2.AutoSize = True
         Me.lblName2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblName2.Enabled = False
         Me.lblName2.Location = New System.Drawing.Point(88, 14)
         Me.lblName2.Name = "lblName2"
         Me.lblName2.Size = New System.Drawing.Size(61, 15)
         Me.lblName2.TabIndex = 7
         Me.lblName2.Text = "Word_Doc"
+        Me.lblName2.Visible = False
         '
         'lblPath2
         '
         Me.lblPath2.AutoSize = True
         Me.lblPath2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPath2.Enabled = False
         Me.lblPath2.Location = New System.Drawing.Point(88, 62)
         Me.lblPath2.Name = "lblPath2"
         Me.lblPath2.Size = New System.Drawing.Size(222, 15)
         Me.lblPath2.TabIndex = 8
         Me.lblPath2.Text = "C:\Users\student-19\Desktop\Word_Doc.txt"
+        Me.lblPath2.Visible = False
         '
         'lblSize2
         '
         Me.lblSize2.AutoSize = True
         Me.lblSize2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblSize2.Enabled = False
         Me.lblSize2.Location = New System.Drawing.Point(88, 38)
         Me.lblSize2.Name = "lblSize2"
         Me.lblSize2.Size = New System.Drawing.Size(56, 15)
         Me.lblSize2.TabIndex = 9
         Me.lblSize2.Text = "570 Bytes"
+        Me.lblSize2.Visible = False
         '
         'txtKeyNumber
         '
+        Me.txtKeyNumber.Enabled = False
         Me.txtKeyNumber.Location = New System.Drawing.Point(88, 88)
         Me.txtKeyNumber.Name = "txtKeyNumber"
         Me.txtKeyNumber.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyNumber.TabIndex = 13
-        Me.txtKeyNumber.Text = "300"
+        Me.txtKeyNumber.Visible = False
         '
         'GroupBox1
         '
@@ -159,7 +166,6 @@ Partial Class MainMenu
         Me.encryptProgress.Name = "encryptProgress"
         Me.encryptProgress.Size = New System.Drawing.Size(428, 23)
         Me.encryptProgress.TabIndex = 15
-        Me.encryptProgress.Value = 78
         '
         'btnEncypt
         '
@@ -196,7 +202,6 @@ Partial Class MainMenu
         Me.decryptProgress.Name = "decryptProgress"
         Me.decryptProgress.Size = New System.Drawing.Size(428, 23)
         Me.decryptProgress.TabIndex = 24
-        Me.decryptProgress.Value = 78
         '
         'btnDecrypt
         '
@@ -219,11 +224,12 @@ Partial Class MainMenu
         '
         'txtKeyDecrypt
         '
+        Me.txtKeyDecrypt.Enabled = False
         Me.txtKeyDecrypt.Location = New System.Drawing.Point(88, 88)
         Me.txtKeyDecrypt.Name = "txtKeyDecrypt"
         Me.txtKeyDecrypt.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyDecrypt.TabIndex = 22
-        Me.txtKeyDecrypt.Text = "300"
+        Me.txtKeyDecrypt.Visible = False
         '
         'Label2
         '
@@ -238,21 +244,25 @@ Partial Class MainMenu
         '
         Me.lblSizeDecrypt.AutoSize = True
         Me.lblSizeDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblSizeDecrypt.Enabled = False
         Me.lblSizeDecrypt.Location = New System.Drawing.Point(88, 38)
         Me.lblSizeDecrypt.Name = "lblSizeDecrypt"
         Me.lblSizeDecrypt.Size = New System.Drawing.Size(56, 15)
         Me.lblSizeDecrypt.TabIndex = 21
         Me.lblSizeDecrypt.Text = "570 Bytes"
+        Me.lblSizeDecrypt.Visible = False
         '
         'lblPathDecrypt
         '
         Me.lblPathDecrypt.AutoSize = True
         Me.lblPathDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblPathDecrypt.Enabled = False
         Me.lblPathDecrypt.Location = New System.Drawing.Point(88, 62)
         Me.lblPathDecrypt.Name = "lblPathDecrypt"
         Me.lblPathDecrypt.Size = New System.Drawing.Size(222, 15)
         Me.lblPathDecrypt.TabIndex = 20
         Me.lblPathDecrypt.Text = "C:\Users\student-19\Desktop\Word_Doc.txt"
+        Me.lblPathDecrypt.Visible = False
         '
         'Label5
         '
@@ -267,11 +277,13 @@ Partial Class MainMenu
         '
         Me.lblNameDecrypt.AutoSize = True
         Me.lblNameDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblNameDecrypt.Enabled = False
         Me.lblNameDecrypt.Location = New System.Drawing.Point(88, 14)
         Me.lblNameDecrypt.Name = "lblNameDecrypt"
         Me.lblNameDecrypt.Size = New System.Drawing.Size(61, 15)
         Me.lblNameDecrypt.TabIndex = 19
         Me.lblNameDecrypt.Text = "Word_Doc"
+        Me.lblNameDecrypt.Visible = False
         '
         'Label7
         '
@@ -345,7 +357,8 @@ Partial Class MainMenu
         'MainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(468, 386)
+        Me.ClientSize = New System.Drawing.Size(491, 488)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)

@@ -57,7 +57,6 @@ Public Class MainMenu
             lblPathDecrypt.Enabled = True
             lblPathDecrypt.Visible = True
 
-
             Dim testFileDecrypt As System.IO.FileInfo
             testFileDecrypt = My.Computer.FileSystem.GetFileInfo(DecryptPath)
 
@@ -783,7 +782,7 @@ Public Class MainMenu
 
 
         c.Add(row1)
-        C.Add(row2)
+        c.Add(row2)
 
         For i As Integer = 1 To 2 Step 1
             For j As Integer = 1 To 1 Step 1
@@ -796,9 +795,9 @@ Public Class MainMenu
                     sum = sum + value1 * value2
                 Next
                 sum = sum Mod 72 ' will need to be increased if more characters are added
-                row1 = C(i - 1)
+                row1 = c(i - 1)
                 row1.Add(sum)
-                C(i - 1) = row1
+                c(i - 1) = row1
             Next
         Next
 
