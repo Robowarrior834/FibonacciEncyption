@@ -19,7 +19,7 @@ Public Class MainMenu
     Private encrytdone As Boolean
     Private decrytdone As Boolean
 
-    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Private Sub fileOpenEncrypt_Click(sender As Object, e As EventArgs) Handles fileOpenEncrypt.Click
         Dim openFileDialog1 As OpenFileDialog = New OpenFileDialog
 
         openFileDialog1.InitialDirectory = "c:\"
@@ -65,7 +65,7 @@ Public Class MainMenu
         decryptTRD.Start()
     End Sub
 
-    Private Sub OpenDecryptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenDecryptToolStripMenuItem.Click
+    Private Sub fileOpenDecrypt_Click(sender As Object, e As EventArgs) Handles fileOpenDecrypt.Click
         Dim openFileDialog1 As New OpenFileDialog()
         openFileDialog1.InitialDirectory = "c:\"
         openFileDialog1.Filter = "locked files (*.locked)|*.locked"
