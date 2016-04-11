@@ -3,7 +3,6 @@ Imports System
 Imports System.Numerics
 Imports System.Threading
 
-
 Public Class MainMenu
     Private DecryptStream As Stream = Nothing
     Private DecryptPath As String
@@ -52,12 +51,10 @@ Public Class MainMenu
             btnEncypt.Visible = True
         End If
 
-
     End Sub
     Private Sub launchThread()
         encryptTRD = New Thread(AddressOf encrypt)
         encryptTRD.Start()
-
 
     End Sub
     Private Sub launchThreadDecrypt()
@@ -75,7 +72,6 @@ Public Class MainMenu
             lblPathDecrypt.Text = DecryptPath
             lblPathDecrypt.Enabled = True
             lblPathDecrypt.Visible = True
-
 
             Dim testFileDecrypt As System.IO.FileInfo
             testFileDecrypt = My.Computer.FileSystem.GetFileInfo(DecryptPath)
@@ -791,8 +787,6 @@ Public Class MainMenu
 
                 matrixmulti(currentchars, c) 'multiply the arraylists together
 
-
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -978,15 +972,12 @@ Public Class MainMenu
             outputfile.Close()
             inputFile.Close()
 
-
         Catch ex As Exception
             outputfile.Close()
         End Try
 
         encryptProgress.Value = size
         encrytionKey.Clear()
-
-
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
@@ -1004,7 +995,6 @@ Public Class MainMenu
         txtKeyNumber.Text = "5"
         btnEncypt.Enabled = False
         encryptTRD.Abort()
-
 
     End Sub
 
@@ -1704,8 +1694,6 @@ Public Class MainMenu
 
                 matrixmultiDecypt(currentchars, c) 'multiply the arraylists together
 
-
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -1913,7 +1901,6 @@ Public Class MainMenu
         txtKeyDecrypt.Enabled = False
         txtKeyDecrypt.Text = "5"
         btnDecrypt.Enabled = False
-
 
     End Sub
 
