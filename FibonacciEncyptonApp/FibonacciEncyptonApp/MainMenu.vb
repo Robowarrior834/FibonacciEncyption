@@ -55,13 +55,13 @@ Public Class MainMenu
 
     End Sub
     Private Sub launchThread()
-
+        encryptTRD = New Thread(AddressOf encrypt)
         encryptTRD.Start()
 
 
     End Sub
     Private Sub launchThreadDecrypt()
-
+        decryptTRD = New Thread(AddressOf decrypt)
         decryptTRD.Start()
     End Sub
 
@@ -2095,6 +2095,7 @@ Public Class MainMenu
     End Sub
 
     Private Sub fileStopEncryption_Click(sender As Object, e As EventArgs) Handles fileStopEncryption.Click
+        encryptTRD.Abort()
 
     End Sub
 End Class
