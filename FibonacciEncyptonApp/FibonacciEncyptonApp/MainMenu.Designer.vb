@@ -50,12 +50,12 @@ Partial Class MainMenu
         Me.fileOpenEncrypt = New System.Windows.Forms.ToolStripMenuItem()
         Me.fileOpenDecrypt = New System.Windows.Forms.ToolStripMenuItem()
         Me.fileStopEncryption = New System.Windows.Forms.ToolStripMenuItem()
+        Me.fileStopDecryption = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.fileStopDecryption = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -322,6 +322,13 @@ Partial Class MainMenu
         Me.fileStopEncryption.Size = New System.Drawing.Size(159, 22)
         Me.fileStopEncryption.Text = "Stop Encryption"
         '
+        'fileStopDecryption
+        '
+        Me.fileStopDecryption.Enabled = False
+        Me.fileStopDecryption.Name = "fileStopDecryption"
+        Me.fileStopDecryption.Size = New System.Drawing.Size(159, 22)
+        Me.fileStopDecryption.Text = "Stop Decryption"
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
@@ -338,21 +345,14 @@ Partial Class MainMenu
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ManualToolStripMenuItem
         '
         Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
-        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
-        '
-        'fileStopDecryption
-        '
-        Me.fileStopDecryption.Enabled = False
-        Me.fileStopDecryption.Name = "fileStopDecryption"
-        Me.fileStopDecryption.Size = New System.Drawing.Size(159, 22)
-        Me.fileStopDecryption.Text = "Stop Decryption"
         '
         'MainMenu
         '

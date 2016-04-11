@@ -55,13 +55,13 @@ Public Class MainMenu
 
     End Sub
     Private Sub launchThread()
-
+        encryptTRD = New Thread(AddressOf encrypt)
         encryptTRD.Start()
 
 
     End Sub
     Private Sub launchThreadDecrypt()
-
+        decryptTRD = New Thread(AddressOf decrypt)
         decryptTRD.Start()
     End Sub
 
@@ -116,6 +116,7 @@ Public Class MainMenu
         '------------file-writing-----------------------
         Dim outputfile As StreamWriter
         '----------end-file-writing--------------
+
         index = 0
         count = 2
         keyvalue = txtKeyNumber.Text
@@ -1000,7 +1001,7 @@ Public Class MainMenu
         lblPath2.Enabled = False
         lblPath2.Visible = False
         txtKeyNumber.Enabled = False
-        txtKeyNumber.Text = ""
+        txtKeyNumber.Text = "5"
         btnEncypt.Enabled = False
         encryptTRD.Abort()
 
@@ -1910,7 +1911,7 @@ Public Class MainMenu
         lblPathDecrypt.Enabled = False
         lblPathDecrypt.Visible = False
         txtKeyDecrypt.Enabled = False
-        txtKeyDecrypt.Text = ""
+        txtKeyDecrypt.Text = "5"
         btnDecrypt.Enabled = False
 
 
@@ -2068,9 +2069,19 @@ Public Class MainMenu
         decryptTRD = New Thread(AddressOf decrypt)
         decryptTRD.IsBackground = False
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+        fileStopEncryption.Enabled = True
+        fileStopDecryption.Enabled = True
     End Sub
 
     Private Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
+    End Sub
+
+    Private Sub fileStopEncryption_Click(sender As Object, e As EventArgs) Handles fileStopEncryption.Click
+        encryptTRD.Abort()
+    End Sub
+
+    Private Sub fileStopDecryption_Click(sender As Object, e As EventArgs) Handles fileStopDecryption.Click
+        decryptTRD.Abort()
     End Sub
 End Class
