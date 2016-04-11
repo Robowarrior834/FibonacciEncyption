@@ -2037,4 +2037,14 @@ Public Class MainMenu
 
         Return r
     End Function
+
+    ' Public Function postEncryptionPath(encryptPath As String) As String
+    'Dim efn As Integer
+    '   efn = InStrRev(encryptPath, "\")
+    'If efn > 0 Then
+    '      encryptPath = (encryptPath, efn)
+    ' Else
+    '       encryptPath = ""
+    '  End If
+    ' End Function
 End Class
