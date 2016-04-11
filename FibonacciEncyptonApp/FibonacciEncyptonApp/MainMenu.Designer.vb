@@ -137,7 +137,6 @@ Partial Class MainMenu
         Me.txtKeyNumber.Name = "txtKeyNumber"
         Me.txtKeyNumber.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyNumber.TabIndex = 13
-        Me.txtKeyNumber.Text = "300"
         '
         'GroupBox1
         '
@@ -230,7 +229,6 @@ Partial Class MainMenu
         Me.txtKeyDecrypt.Name = "txtKeyDecrypt"
         Me.txtKeyDecrypt.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyDecrypt.TabIndex = 22
-        Me.txtKeyDecrypt.Text = "300"
         '
         'Label2
         '

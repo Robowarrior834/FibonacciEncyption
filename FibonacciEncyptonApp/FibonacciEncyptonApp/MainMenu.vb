@@ -2058,6 +2058,9 @@ Public Class MainMenu
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         fileStopEncryption.Enabled = True
         fileStopDecryption.Enabled = True
+        lblName2.Visible = False
+        lblSize2.Visible = False
+        lblPath2.Visible = False
     End Sub
 
     Private Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -2071,4 +2074,6 @@ Public Class MainMenu
     Private Sub fileStopDecryption_Click(sender As Object, e As EventArgs) Handles fileStopDecryption.Click
         decryptTRD.Abort()
     End Sub
+
+
 End Class
