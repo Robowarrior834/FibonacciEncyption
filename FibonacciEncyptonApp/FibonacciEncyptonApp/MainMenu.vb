@@ -1877,6 +1877,7 @@ Public Class MainMenu
             Process.Start("C:\")
         End If
 
+        btnDecrypt.Visible = False
         decryptProgress.Value = 0
         lblNameDecrypt.Enabled = False
         lblNameDecrypt.Visible = False
