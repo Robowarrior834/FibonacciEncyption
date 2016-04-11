@@ -3,7 +3,6 @@ Imports System
 Imports System.Numerics
 Imports System.Threading
 
-
 Public Class MainMenu
     Private DecryptStream As Stream = Nothing
     Private DecryptPath As String
@@ -52,16 +51,14 @@ Public Class MainMenu
             btnEncypt.Visible = True
         End If
 
-
     End Sub
     Private Sub launchThread()
-
+        encryptTRD = New Thread(AddressOf encrypt)
         encryptTRD.Start()
-
 
     End Sub
     Private Sub launchThreadDecrypt()
-
+        decryptTRD = New Thread(AddressOf decrypt)
         decryptTRD.Start()
     End Sub
 
@@ -75,7 +72,6 @@ Public Class MainMenu
             lblPathDecrypt.Text = DecryptPath
             lblPathDecrypt.Enabled = True
             lblPathDecrypt.Visible = True
-
 
             Dim testFileDecrypt As System.IO.FileInfo
             testFileDecrypt = My.Computer.FileSystem.GetFileInfo(DecryptPath)
@@ -116,6 +112,7 @@ Public Class MainMenu
         '------------file-writing-----------------------
         Dim outputfile As StreamWriter
         '----------end-file-writing--------------
+
         index = 0
         count = 2
         keyvalue = txtKeyNumber.Text
@@ -790,8 +787,6 @@ Public Class MainMenu
 
                 matrixmulti(currentchars, c) 'multiply the arraylists together
 
-
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -977,15 +972,12 @@ Public Class MainMenu
             outputfile.Close()
             inputFile.Close()
 
-
         Catch ex As Exception
             outputfile.Close()
         End Try
 
         encryptProgress.Value = size
         encrytionKey.Clear()
-
-
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
@@ -1000,10 +992,9 @@ Public Class MainMenu
         lblPath2.Enabled = False
         lblPath2.Visible = False
         txtKeyNumber.Enabled = False
-        txtKeyNumber.Text = ""
+        txtKeyNumber.Text = "5"
         btnEncypt.Enabled = False
         encryptTRD.Abort()
-
 
     End Sub
 
@@ -1703,8 +1694,6 @@ Public Class MainMenu
 
                 matrixmultiDecypt(currentchars, c) 'multiply the arraylists together
 
-
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -1910,9 +1899,8 @@ Public Class MainMenu
         lblPathDecrypt.Enabled = False
         lblPathDecrypt.Visible = False
         txtKeyDecrypt.Enabled = False
-        txtKeyDecrypt.Text = ""
+        txtKeyDecrypt.Text = "5"
         btnDecrypt.Enabled = False
-
 
     End Sub
 
@@ -2068,9 +2056,28 @@ Public Class MainMenu
         decryptTRD = New Thread(AddressOf decrypt)
         decryptTRD.IsBackground = False
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+        fileStopEncryption.Enabled = True
+        fileStopDecryption.Enabled = True
+        lblName2.Visible = False
+        lblSize2.Visible = False
+        lblPath2.Visible = False
     End Sub
 
     Private Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        encryptTRD.Abort()
+        decryptTRD.Abort()
 
+    End Sub
+
+    Private Sub fileStopEncryption_Click(sender As Object, e As EventArgs) Handles fileStopEncryption.Click
+        encryptTRD.Abort()
+    End Sub
+
+    Private Sub fileStopDecryption_Click(sender As Object, e As EventArgs) Handles fileStopDecryption.Click
+        decryptTRD.Abort()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
     End Sub
 End Class
