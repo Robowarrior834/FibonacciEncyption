@@ -971,8 +971,20 @@ Public Class MainMenu
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start("C:\")
+            Process.Start(outputPath)
         End If
+
+        encryptProgress.Value = 0
+        lblName2.Enabled = False
+        lblName2.Visible = False
+        lblSize2.Enabled = False
+        lblSize2.Visible = False
+        lblPath2.Enabled = False
+        lblPath2.Visible = False
+        txtKeyNumber.Enabled = False
+        txtKeyNumber.Text = ""
+        btnEncypt.Enabled = False
+
 
     End Sub
 
@@ -1864,6 +1876,11 @@ Public Class MainMenu
         If EncryptResponse = MsgBoxResult.Yes Then
             Process.Start("C:\")
         End If
+
+        encryptProgress.Value = 0
+        lblName2.Enabled = False
+        lblName2.Visible = False
+
 
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
