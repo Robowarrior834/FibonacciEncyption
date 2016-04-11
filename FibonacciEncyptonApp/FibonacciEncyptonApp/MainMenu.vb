@@ -442,6 +442,7 @@ Public Class MainMenu
                         tempString = "80"
                         tempValue = BigInteger.Parse(tempString)
                         row1.Add(tempValue)
+
                 End Select
                 Select Case buffer(1)
                     Case "a"
@@ -966,7 +967,7 @@ Public Class MainMenu
         Catch ex As Exception
             outputfile.Close()
         End Try
-
+        encryptProgress.Value = size
         encrytionKey.Clear()
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
@@ -1869,7 +1870,7 @@ Public Class MainMenu
 
         Catch ex As Exception
         End Try
-
+        decryptProgress.Value = size
         decryptionKey.Clear()
 
         Dim EncryptResponse = MsgBox("The file has been decrypted. Open file location?", MessageBoxButtons.YesNo)
