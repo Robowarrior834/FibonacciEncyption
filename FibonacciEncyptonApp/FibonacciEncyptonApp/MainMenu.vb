@@ -1908,9 +1908,13 @@ Public Class MainMenu
         decryptProgress.Value = size
         decryptionKey.Clear()
 
+        Dim outputPathREV = Mid$(outputPath, InStrRev(outputPath, "\") + 1)
+
+        Dim outputPathREVNEW As String = Replace(outputPath, outputPathREV, "")
+
         Dim EncryptResponse = MsgBox("The file has been decrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start("C:\")
+            Process.Start(outputPathREVNEW)
         End If
 
         decryptProgress.Value = 0
