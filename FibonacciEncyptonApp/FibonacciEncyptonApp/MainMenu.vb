@@ -58,7 +58,6 @@ Public Class MainMenu
         encryptTRD = New Thread(AddressOf encrypt)
         encryptTRD.Start()
 
-
     End Sub
     Private Sub launchThreadDecrypt()
         decryptTRD = New Thread(AddressOf decrypt)
