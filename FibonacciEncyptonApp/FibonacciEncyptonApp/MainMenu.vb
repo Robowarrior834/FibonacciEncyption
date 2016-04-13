@@ -2109,4 +2109,10 @@ Public Class MainMenu
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
     End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Dim about As New About
+        about.Visible = True
+        about.Activate()
+    End Sub
 End Class
