@@ -1025,7 +1025,7 @@ Public Class MainMenu
 
     End Sub
 
-    Private Sub decrypt()
+    Public Sub decrypt()
         Dim inputFile As StreamReader
         Dim buffer(1) As Char
         Dim index As Integer
