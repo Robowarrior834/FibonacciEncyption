@@ -23,6 +23,7 @@ Partial Class MainMenu
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblPath = New System.Windows.Forms.Label()
         Me.lblSize = New System.Windows.Forms.Label()
@@ -362,6 +363,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainMenu"
         Me.Text = "Fibonacci Encyption"
