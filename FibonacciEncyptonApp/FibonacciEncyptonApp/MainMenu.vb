@@ -794,7 +794,6 @@ Public Class MainMenu
                 matrixmulti(currentchars, c) 'multiply the arraylists together
 
 
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -988,11 +987,13 @@ Public Class MainMenu
         encryptProgress.Value = size
         encrytionKey.Clear()
 
+        Dim outputPathREV = Mid$(outputPath, InStrRev(outputPath, "\") + 1)
 
+        Dim outputPathREVNEW As String = Replace(outputPath, outputPathREV, "")
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start("C:\")
+            Process.Start(outputPathREVNEW)
         End If
 
         encryptProgress.Value = 0
@@ -1907,9 +1908,13 @@ Public Class MainMenu
         decryptProgress.Value = size
         decryptionKey.Clear()
 
+        Dim outputPathREV = Mid$(outputPath, InStrRev(outputPath, "\") + 1)
+
+        Dim outputPathREVNEW As String = Replace(outputPath, outputPathREV, "")
+
         Dim EncryptResponse = MsgBox("The file has been decrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start("C:\")
+            Process.Start(outputPathREVNEW)
         End If
 
         decryptProgress.Value = 0
@@ -2095,6 +2100,13 @@ Public Class MainMenu
 
     Private Sub fileStopEncryption_Click(sender As Object, e As EventArgs) Handles fileStopEncryption.Click
         encryptTRD.Abort()
+        fileOpenDecrypt.Enabled = True
+        fileOpenEncrypt.Enabled = True
+        fileStopEncryption.Enabled = False
+        fileStopDecryption.Enabled = False
+    End Sub
 
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
     End Sub
 End Class
