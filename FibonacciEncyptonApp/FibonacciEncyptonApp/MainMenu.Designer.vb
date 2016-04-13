@@ -54,12 +54,14 @@ Partial Class MainMenu
         Me.fileStopDecryption = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblName
@@ -138,6 +140,7 @@ Partial Class MainMenu
         Me.txtKeyNumber.Name = "txtKeyNumber"
         Me.txtKeyNumber.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyNumber.TabIndex = 13
+        Me.ToolTip1.SetToolTip(Me.txtKeyNumber, "Enter a unique encryption key number here")
         '
         'GroupBox1
         '
@@ -174,7 +177,7 @@ Partial Class MainMenu
         Me.btnEncypt.Size = New System.Drawing.Size(75, 23)
         Me.btnEncypt.TabIndex = 14
         Me.btnEncypt.Text = "Encrypt"
-        Me.ToolTip1.SetToolTip(Me.btnEncypt, "Click this to encrypt the file.")
+        Me.ToolTip1.SetToolTip(Me.btnEncypt, "Click here to encrypt the file.")
         Me.btnEncypt.UseVisualStyleBackColor = True
         '
         'GroupBox2
@@ -211,7 +214,7 @@ Partial Class MainMenu
         Me.btnDecrypt.Size = New System.Drawing.Size(75, 23)
         Me.btnDecrypt.TabIndex = 23
         Me.btnDecrypt.Text = "Decrypt"
-        Me.ToolTip1.SetToolTip(Me.btnDecrypt, "Click this to Decrypt the file.")
+        Me.ToolTip1.SetToolTip(Me.btnDecrypt, "Click here to decrypt the file.")
         Me.btnDecrypt.UseVisualStyleBackColor = True
         '
         'Label1
@@ -230,6 +233,7 @@ Partial Class MainMenu
         Me.txtKeyDecrypt.Name = "txtKeyDecrypt"
         Me.txtKeyDecrypt.Size = New System.Drawing.Size(109, 20)
         Me.txtKeyDecrypt.TabIndex = 22
+        Me.ToolTip1.SetToolTip(Me.txtKeyDecrypt, "Enter a unique decryption key number here")
         '
         'Label2
         '
@@ -308,33 +312,37 @@ Partial Class MainMenu
         'fileOpenEncrypt
         '
         Me.fileOpenEncrypt.Name = "fileOpenEncrypt"
-        Me.fileOpenEncrypt.Size = New System.Drawing.Size(159, 22)
+        Me.fileOpenEncrypt.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.fileOpenEncrypt.Size = New System.Drawing.Size(197, 22)
         Me.fileOpenEncrypt.Text = "Open Encypt"
         '
         'fileOpenDecrypt
         '
         Me.fileOpenDecrypt.Name = "fileOpenDecrypt"
-        Me.fileOpenDecrypt.Size = New System.Drawing.Size(159, 22)
+        Me.fileOpenDecrypt.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.fileOpenDecrypt.Size = New System.Drawing.Size(197, 22)
         Me.fileOpenDecrypt.Text = "Open Decrypt"
         '
         'fileStopEncryption
         '
         Me.fileStopEncryption.Enabled = False
         Me.fileStopEncryption.Name = "fileStopEncryption"
-        Me.fileStopEncryption.Size = New System.Drawing.Size(159, 22)
+        Me.fileStopEncryption.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.fileStopEncryption.Size = New System.Drawing.Size(197, 22)
         Me.fileStopEncryption.Text = "Stop Encryption"
         '
         'fileStopDecryption
         '
         Me.fileStopDecryption.Enabled = False
         Me.fileStopDecryption.Name = "fileStopDecryption"
-        Me.fileStopDecryption.Size = New System.Drawing.Size(159, 22)
+        Me.fileStopDecryption.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.fileStopDecryption.Size = New System.Drawing.Size(197, 22)
         Me.fileStopDecryption.Text = "Stop Decryption"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -344,17 +352,22 @@ Partial Class MainMenu
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
+        'ManualToolStripMenuItem
+        '
+        Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
+        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ManualToolStripMenuItem.Text = "Manual"
+        '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
-        'ManualToolStripMenuItem
+        'FileSystemWatcher1
         '
-        Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
-        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ManualToolStripMenuItem.Text = "Manual"
+        Me.FileSystemWatcher1.EnableRaisingEvents = True
+        Me.FileSystemWatcher1.SynchronizingObject = Me
         '
         'MainMenu
         '
@@ -373,6 +386,7 @@ Partial Class MainMenu
         Me.GroupBox2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -411,4 +425,5 @@ Partial Class MainMenu
     Friend WithEvents fileOpenDecrypt As ToolStripMenuItem
     Friend WithEvents decryptProgress As ProgressBar
     Friend WithEvents fileStopDecryption As ToolStripMenuItem
+    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
 End Class
