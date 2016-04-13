@@ -347,13 +347,13 @@ Partial Class MainMenu
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ManualToolStripMenuItem
         '
         Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
-        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
         '
         'MainMenu
