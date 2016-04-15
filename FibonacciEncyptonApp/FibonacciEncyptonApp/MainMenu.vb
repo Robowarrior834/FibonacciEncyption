@@ -1016,11 +1016,11 @@ Public Class MainMenu
     End Sub
 
     Private Sub btnEncypt_Click(sender As Object, e As EventArgs) Handles btnEncypt.Click
-        Dim message = MsgBox("Please only numeric characters.", MessageBoxButtons.OK)
+
         If (IsNumeric(txtKeyNumber.Text) = True) Then
             launchThread()
         Else
-
+            Dim message = MsgBox("Please only numeric characters.", MessageBoxButtons.OK)
         End If
 
     End Sub
@@ -1941,13 +1941,13 @@ Public Class MainMenu
     End Sub
 
     Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
-        Dim message = MsgBox("Please only numeric characters.", MessageBoxButtons.OK)
-        If (IsNumeric(txtKeyDecrypt.Text) = True) Then
-            launchThread()
-        Else
 
+        If (IsNumeric(txtKeyDecrypt.Text) = True) Then
+            launchThreadDecrypt()
+        Else
+            Dim message = MsgBox("Please only numeric characters.", MessageBoxButtons.OK)
         End If
-        launchThreadDecrypt()
+
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
         Dim number1 As String = "1"
