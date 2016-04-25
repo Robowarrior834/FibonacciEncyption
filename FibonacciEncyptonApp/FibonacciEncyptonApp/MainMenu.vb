@@ -2101,8 +2101,14 @@ Public Class MainMenu
     End Sub
 
     Private Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        encryptTRD.Abort()
-        decryptTRD.Abort()
+
+        If MessageBox.Show("Are you sure you want to close the form?", "Close Form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            e.Cancel = True
+        Else
+            encryptTRD.Abort()
+            decryptTRD.Abort()
+        End If
+
 
     End Sub
 
