@@ -58,6 +58,8 @@ Partial Class MainMenu
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -109,6 +111,7 @@ Partial Class MainMenu
         Me.lblName2.Name = "lblName2"
         Me.lblName2.Size = New System.Drawing.Size(2, 15)
         Me.lblName2.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.lblName2, "This is the name of the imported .txt file")
         Me.lblName2.Visible = False
         '
         'lblPath2
@@ -120,6 +123,7 @@ Partial Class MainMenu
         Me.lblPath2.Name = "lblPath2"
         Me.lblPath2.Size = New System.Drawing.Size(2, 15)
         Me.lblPath2.TabIndex = 8
+        Me.ToolTip1.SetToolTip(Me.lblPath2, "This is the file path of the imported .txt file")
         Me.lblPath2.Visible = False
         '
         'lblSize2
@@ -131,6 +135,7 @@ Partial Class MainMenu
         Me.lblSize2.Name = "lblSize2"
         Me.lblSize2.Size = New System.Drawing.Size(2, 15)
         Me.lblSize2.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.lblSize2, "This is the size of the imported .txt file")
         Me.lblSize2.Visible = False
         '
         'txtKeyNumber
@@ -168,6 +173,7 @@ Partial Class MainMenu
         Me.encryptProgress.Size = New System.Drawing.Size(428, 23)
         Me.encryptProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.encryptProgress.TabIndex = 15
+        Me.ToolTip1.SetToolTip(Me.encryptProgress, "This status bar represents the encryption process.")
         '
         'btnEncypt
         '
@@ -205,6 +211,7 @@ Partial Class MainMenu
         Me.decryptProgress.Name = "decryptProgress"
         Me.decryptProgress.Size = New System.Drawing.Size(428, 23)
         Me.decryptProgress.TabIndex = 24
+        Me.ToolTip1.SetToolTip(Me.decryptProgress, "This status bar represents the decryption process.")
         '
         'btnDecrypt
         '
@@ -252,6 +259,7 @@ Partial Class MainMenu
         Me.lblSizeDecrypt.Name = "lblSizeDecrypt"
         Me.lblSizeDecrypt.Size = New System.Drawing.Size(2, 15)
         Me.lblSizeDecrypt.TabIndex = 21
+        Me.ToolTip1.SetToolTip(Me.lblSizeDecrypt, "This is the size of the imported .locked file")
         Me.lblSizeDecrypt.Visible = False
         '
         'lblPathDecrypt
@@ -262,6 +270,7 @@ Partial Class MainMenu
         Me.lblPathDecrypt.Name = "lblPathDecrypt"
         Me.lblPathDecrypt.Size = New System.Drawing.Size(2, 15)
         Me.lblPathDecrypt.TabIndex = 20
+        Me.ToolTip1.SetToolTip(Me.lblPathDecrypt, "This is the file path of the imported .locked file")
         Me.lblPathDecrypt.Visible = False
         '
         'Label5
@@ -281,6 +290,7 @@ Partial Class MainMenu
         Me.lblNameDecrypt.Name = "lblNameDecrypt"
         Me.lblNameDecrypt.Size = New System.Drawing.Size(2, 15)
         Me.lblNameDecrypt.TabIndex = 19
+        Me.ToolTip1.SetToolTip(Me.lblNameDecrypt, "This is the name of the imported .locked file")
         Me.lblNameDecrypt.Visible = False
         '
         'Label7
@@ -315,6 +325,7 @@ Partial Class MainMenu
         Me.fileOpenEncrypt.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
         Me.fileOpenEncrypt.Size = New System.Drawing.Size(197, 22)
         Me.fileOpenEncrypt.Text = "Open Encypt"
+        Me.fileOpenEncrypt.ToolTipText = "Click to import a .txt file"
         '
         'fileOpenDecrypt
         '
@@ -322,6 +333,7 @@ Partial Class MainMenu
         Me.fileOpenDecrypt.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
         Me.fileOpenDecrypt.Size = New System.Drawing.Size(197, 22)
         Me.fileOpenDecrypt.Text = "Open Decrypt"
+        Me.fileOpenDecrypt.ToolTipText = "Click to import a .locked file"
         '
         'fileStopEncryption
         '
@@ -330,6 +342,7 @@ Partial Class MainMenu
         Me.fileStopEncryption.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
         Me.fileStopEncryption.Size = New System.Drawing.Size(197, 22)
         Me.fileStopEncryption.Text = "Stop Encryption"
+        Me.fileStopEncryption.ToolTipText = "Click here to stop encrypting the .txt file"
         '
         'fileStopDecryption
         '
@@ -338,12 +351,14 @@ Partial Class MainMenu
         Me.fileStopDecryption.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
         Me.fileStopDecryption.Size = New System.Drawing.Size(197, 22)
         Me.fileStopDecryption.Text = "Stop Decryption"
+        Me.fileStopDecryption.ToolTipText = "Click here to stop decrypting the .locked file"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
+        Me.ExitToolStripMenuItem.ToolTipText = "Click here to exit Fibonacci Text Encryption"
         '
         'HelpToolStripMenuItem
         '
@@ -355,19 +370,23 @@ Partial Class MainMenu
         'ManualToolStripMenuItem
         '
         Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
-        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'FileSystemWatcher1
         '
         Me.FileSystemWatcher1.EnableRaisingEvents = True
         Me.FileSystemWatcher1.SynchronizingObject = Me
+        '
+        'ToolTip2
+        '
+        Me.ToolTip2.Tag = "This is the name of the imported .txt file"
         '
         'MainMenu
         '
@@ -429,4 +448,6 @@ Partial Class MainMenu
     Friend WithEvents decryptProgress As ProgressBar
     Friend WithEvents fileStopDecryption As ToolStripMenuItem
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
+    Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents ToolTip3 As ToolTip
 End Class
