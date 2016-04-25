@@ -2111,15 +2111,26 @@ Public Class MainMenu
     End Sub
 
     Private Sub fileStopDecryption_Click(sender As Object, e As EventArgs) Handles fileStopDecryption.Click
-        decryptTRD.Abort()
+        Dim DecryptResponse = MsgBox("Are you sure you want to stop decryption?", MessageBoxButtons.YesNo)
+        If DecryptResponse = MsgBoxResult.Yes Then
+            decryptTRD.Abort()
+            fileOpenDecrypt.Enabled = True
+            fileOpenEncrypt.Enabled = True
+            fileStopEncryption.Enabled = False
+            fileStopDecryption.Enabled = False
+        End If
     End Sub
 
     Private Sub fileStopEncryption_Click(sender As Object, e As EventArgs) Handles fileStopEncryption.Click
-        encryptTRD.Abort()
-        fileOpenDecrypt.Enabled = True
-        fileOpenEncrypt.Enabled = True
-        fileStopEncryption.Enabled = False
-        fileStopDecryption.Enabled = False
+        Dim EncryptResponse = MsgBox("Are you sure you want to stop encryption?", MessageBoxButtons.YesNo)
+        If EncryptResponse = MsgBoxResult.Yes Then
+            encryptTRD.Abort()
+            fileOpenDecrypt.Enabled = True
+            fileOpenEncrypt.Enabled = True
+            fileStopEncryption.Enabled = False
+            fileStopDecryption.Enabled = False
+        End If
+
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
