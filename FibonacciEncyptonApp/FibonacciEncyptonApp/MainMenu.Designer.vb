@@ -401,7 +401,7 @@ Partial Class MainMenu
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "MainMenu"
-        Me.Text = "Fibonacci Text Encyption"
+        Me.Text = "The Modern Enigma"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
