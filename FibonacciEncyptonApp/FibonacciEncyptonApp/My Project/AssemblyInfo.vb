@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Fibonacci Text Encryption")>
+<Assembly: AssemblyTitle("The Modern Enigma")>
 <Assembly: AssemblyDescription("This program takes a text file and encrypts the data in a secure and quick manner.")>
 <Assembly: AssemblyCompany("A.C.E. Computing")>
-<Assembly: AssemblyProduct("Fibonacci Text Encrypton")>
+<Assembly: AssemblyProduct("The Modern Enigma")>
 <Assembly: AssemblyCopyright("Copyright © A.C.E. Computing 2016")>
 <Assembly: AssemblyTrademark("")>
 

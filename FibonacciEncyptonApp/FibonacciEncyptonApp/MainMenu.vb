@@ -2108,8 +2108,6 @@ Public Class MainMenu
             encryptTRD.Abort()
             decryptTRD.Abort()
         End If
-
-
     End Sub
 
     Private Sub fileStopDecryption_Click(sender As Object, e As EventArgs) Handles fileStopDecryption.Click
