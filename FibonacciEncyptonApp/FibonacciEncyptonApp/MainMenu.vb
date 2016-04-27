@@ -55,13 +55,12 @@ Public Class MainMenu
 
     End Sub
     Private Sub launchThread()
-
+        encryptTRD = New Thread(AddressOf encrypt)
         encryptTRD.Start()
-
 
     End Sub
     Private Sub launchThreadDecrypt()
-
+        decryptTRD = New Thread(AddressOf decrypt)
         decryptTRD.Start()
     End Sub
 
@@ -795,7 +794,6 @@ Public Class MainMenu
                 matrixmulti(currentchars, c) 'multiply the arraylists together
 
 
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -989,11 +987,13 @@ Public Class MainMenu
         encryptProgress.Value = size
         encrytionKey.Clear()
 
+        Dim outputPathREV = Mid$(outputPath, InStrRev(outputPath, "\") + 1)
 
+        Dim outputPathREVNEW As String = Replace(outputPath, outputPathREV, "")
 
         Dim EncryptResponse = MsgBox("The file has been encrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start("C:\")
+            Process.Start(outputPathREVNEW)
         End If
 
         encryptProgress.Value = 0
@@ -1016,10 +1016,16 @@ Public Class MainMenu
     End Sub
 
     Private Sub btnEncypt_Click(sender As Object, e As EventArgs) Handles btnEncypt.Click
-        launchThread()
+
+        If (IsNumeric(txtKeyNumber.Text) = True) Then
+            launchThread()
+        Else
+            Dim message = MsgBox("Please only numeric characters.", MessageBoxButtons.OK)
+        End If
 
     End Sub
-    Private Sub decrypt()
+
+    Public Sub decrypt()
         Dim inputFile As StreamReader
         Dim buffer(1) As Char
         Dim index As Integer
@@ -1908,9 +1914,13 @@ Public Class MainMenu
         decryptProgress.Value = size
         decryptionKey.Clear()
 
+        Dim outputPathREV = Mid$(outputPath, InStrRev(outputPath, "\") + 1)
+
+        Dim outputPathREVNEW As String = Replace(outputPath, outputPathREV, "")
+
         Dim EncryptResponse = MsgBox("The file has been decrypted. Open file location?", MessageBoxButtons.YesNo)
         If EncryptResponse = MsgBoxResult.Yes Then
-            Process.Start("C:\")
+            Process.Start(outputPathREVNEW)
         End If
 
         decryptProgress.Value = 0
@@ -1931,7 +1941,13 @@ Public Class MainMenu
     End Sub
 
     Private Sub btnDecrypt_Click(sender As Object, e As EventArgs) Handles btnDecrypt.Click
-        launchThreadDecrypt()
+
+        If (IsNumeric(txtKeyDecrypt.Text) = True) Then
+            launchThreadDecrypt()
+        Else
+            Dim message = MsgBox("Please only numeric characters.", MessageBoxButtons.OK)
+        End If
+
     End Sub
     Private Sub GenFibonacci(ByVal keyvalue As Integer) 'Generates the first 300 fibonacci numbers in less then a second
         Dim number1 As String = "1"
@@ -2085,20 +2101,45 @@ Public Class MainMenu
     End Sub
 
     Private Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        encryptTRD.Abort()
-        decryptTRD.Abort()
 
+        If MessageBox.Show("Are you sure you want to close the form?", "Close Form", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            e.Cancel = True
+        Else
+            encryptTRD.Abort()
+            decryptTRD.Abort()
+        End If
     End Sub
 
     Private Sub fileStopDecryption_Click(sender As Object, e As EventArgs) Handles fileStopDecryption.Click
-        decryptTRD.Abort()
+        Dim DecryptResponse = MsgBox("Are you sure you want to stop decryption?", MessageBoxButtons.YesNo)
+        If DecryptResponse = MsgBoxResult.Yes Then
+            decryptTRD.Abort()
+            fileOpenDecrypt.Enabled = True
+            fileOpenEncrypt.Enabled = True
+            fileStopEncryption.Enabled = False
+            fileStopDecryption.Enabled = False
+        End If
+    End Sub
+
+    Private Sub fileStopEncryption_Click(sender As Object, e As EventArgs) Handles fileStopEncryption.Click
+        Dim EncryptResponse = MsgBox("Are you sure you want to stop encryption?", MessageBoxButtons.YesNo)
+        If EncryptResponse = MsgBoxResult.Yes Then
+            encryptTRD.Abort()
+            fileOpenDecrypt.Enabled = True
+            fileOpenEncrypt.Enabled = True
+            fileStopEncryption.Enabled = False
+            fileStopDecryption.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub ManualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualToolStripMenuItem.Click
-
+        Dim about As New About
+        about.Visible = True
+        about.Activate()
     End Sub
 End Class
