@@ -358,7 +358,7 @@ Partial Class MainMenu
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        Me.ExitToolStripMenuItem.ToolTipText = "Click here to exit Fibonacci Text Encryption"
+        Me.ExitToolStripMenuItem.ToolTipText = "Click here to exit The Modern Enigma"
         '
         'HelpToolStripMenuItem
         '
@@ -370,13 +370,13 @@ Partial Class MainMenu
         'ManualToolStripMenuItem
         '
         Me.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem"
-        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ManualToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.ManualToolStripMenuItem.Text = "Manual"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'FileSystemWatcher1
