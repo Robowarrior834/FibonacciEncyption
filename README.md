@@ -1,4 +1,4 @@
-# FibonacciEncyption
+# FibonacciEncyption README
 ##How to Install:
 *	Insert CD
 *	Browse to the contents of the CD
