@@ -3,7 +3,6 @@ Imports System
 Imports System.Numerics
 Imports System.Threading
 
-
 Public Class MainMenu
     Private DecryptStream As Stream = Nothing
     Private DecryptPath As String
@@ -52,7 +51,6 @@ Public Class MainMenu
             btnEncypt.Visible = True
         End If
 
-
     End Sub
     Private Sub launchThread()
         encryptTRD = New Thread(AddressOf encrypt)
@@ -74,7 +72,6 @@ Public Class MainMenu
             lblPathDecrypt.Text = DecryptPath
             lblPathDecrypt.Enabled = True
             lblPathDecrypt.Visible = True
-
 
             Dim testFileDecrypt As System.IO.FileInfo
             testFileDecrypt = My.Computer.FileSystem.GetFileInfo(DecryptPath)
@@ -793,7 +790,6 @@ Public Class MainMenu
 
                 matrixmulti(currentchars, c) 'multiply the arraylists together
 
-
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
                 For j As Integer = 0 To 1 Step 1
@@ -979,7 +975,6 @@ Public Class MainMenu
             outputfile.Close()
             inputFile.Close()
 
-
         Catch ex As Exception
             outputfile.Close()
         End Try
@@ -1011,7 +1006,6 @@ Public Class MainMenu
         fileStopEncryption.Enabled = False
         fileStopDecryption.Enabled = False
         encryptTRD.Abort()
-
 
     End Sub
 
@@ -1720,8 +1714,6 @@ Public Class MainMenu
                 currentchars.Add(row2)
 
                 matrixmultiDecypt(currentchars, c) 'multiply the arraylists together
-
-
 
                 Dim temrow As New ArrayList
                 Dim tempBig As BigInteger
